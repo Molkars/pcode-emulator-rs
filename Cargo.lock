@@ -235,9 +235,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.76"
+version = "1.0.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "95fc56cda0b5c3325f5fbbd7ff9fda9e02bb00bb3dac51252d2f1bfa1cb8cc8c"
+checksum = "e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae"
 dependencies = [
  "unicode-ident",
 ]
@@ -260,8 +260,7 @@ checksum = "a3cf7c11c38cb994f3d40e8a8cde3bbd1f72a435e4c49e85d6553d8312306152"
 [[package]]
 name = "sleigh"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c0e4f02b2f57f53ca21f624b1c7dc06a07ce86e0bf740f7cc22b7f5300d1581"
+source = "git+https://github.com/Molkars/sleigh#852e59adedc84638dc3f0edaa2a5dab89f1c2efc"
 dependencies = [
  "cxx",
  "lazy_static",
@@ -272,6 +271,7 @@ dependencies = [
 [[package]]
 name = "sleigh-sys"
 version = "0.1.0"
+source = "git+https://github.com/Molkars/sleigh-sys#4f494ee4939aa2456e5f1c773c81755888403942"
 dependencies = [
  "cc",
  "cxx",

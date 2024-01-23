@@ -1,0 +1,6 @@
+[submodule "sleigh"]
+	path = sleigh
+	url = https://github.com/Molkars/sleigh
+[submodule "sleigh-sys"]
+	path = sleigh-sys
+	url = https://github.com/Molkars/sleigh-sys
