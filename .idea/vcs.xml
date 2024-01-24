@@ -2,8 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/sleigh" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/sleigh-sys" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/sleigh/target/debug/build/sleigh-sys-f0fe4e1bc48f249c/out/cxxbridge/crate/sleigh-sys" vcs="Git" />
   </component>
 </project>

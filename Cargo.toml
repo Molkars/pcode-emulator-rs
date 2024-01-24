@@ -6,6 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.79"
+hashbrown = "0.14.3"
+num = { version = "0.4.1", features = ["rand", "serde", "num-bigint", "alloc", "libm"] }
 #sleigh = { path="sleigh" }
 sleigh = { git="https://github.com/Molkars/sleigh" }
 
