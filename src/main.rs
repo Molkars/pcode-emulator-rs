@@ -11,8 +11,6 @@ mod command;
 
 mod emulator;
 
-mod arbint;
-
 fn build_binaries() {
     const CFLAGS: &[&str] = &["-c", "example.c"];
 
