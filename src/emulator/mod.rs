@@ -79,38 +79,3 @@ impl Emulator {
         Ok(())
     }
 }
-
-fn integer_add(lhs: &[u8], rhs: &[u8]) -> (Vec<u8>, bool) {
-    assert_eq!(lhs.len(), rhs.len());
-    let mut out = vec![0; lhs.len()];
-    let mut overflow = false;
-    for (i, (a, b)) in lhs.iter().rev().zip(rhs.iter().rev()).enumerate() {
-        let (result, did_overflow) = a.overflowing_add(*b);
-
-        let (result, did_overflow) = if overflow {
-            let (result, interior_overflow) = result.overflowing_add(1);
-            (result, interior_overflow | did_overflow)
-        } else {
-            (result, did_overflow)
-        };
-        overflow = did_overflow;
-        out[lhs.len() - i - 1] = result;
-    }
-
-    (out, overflow)
-}
-
-#[inline]
-fn negate_integer(value: &[u8]) -> Vec<u8> {
-    value
-        .iter()
-        .map(|val| !*val)
-        .collect()
-}
-
-fn ssub(lhs: &[u8], rhs: &[u8]) -> (Vec<u8>, bool) {
-    let complement = negate_integer(rhs);
-    let (result, overflow) = integer_add(lhs, complement.as_slice());
-    let (result, overflow2) = integer_add(result.as_slice(), &[1]);
-    (result, overflow || overflow2)
-}
