@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.79"
+cxx = { version = "1.0.115", features = ["c++17"] }
 hashbrown = "0.14.3"
 num = { version = "0.4.1", features = ["rand", "serde", "num-bigint", "alloc", "libm"] }
 #sleigh = { path="sleigh" }
@@ -14,3 +15,6 @@ sleigh = { git="https://github.com/Molkars/sleigh" }
 
 [workspace]
 members = []
+
+[build-dependencies]
+cxx-build = "1.0.115"

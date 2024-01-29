@@ -283,6 +283,8 @@ name = "pcode"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cxx",
+ "cxx-build",
  "hashbrown",
  "num",
  "sleigh",

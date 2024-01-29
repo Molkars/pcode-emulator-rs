@@ -40,7 +40,7 @@ pub struct Emulator;
 
 impl Emulator {
     pub fn emulate<'a>(codes: impl IntoIterator<Item=&'a PCode>) -> anyhow::Result<()> {
-        let mut machine = Machine {
+        let machine = Machine {
             spaces: HashMap::from([
                 ("register".to_string(), Space::with_size(1024)),
                 ("unique".to_string(), Space::with_size(u16::MAX as usize)),

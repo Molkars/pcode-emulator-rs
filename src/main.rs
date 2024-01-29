@@ -4,10 +4,8 @@ use std::fs::File;
 use std::io::{BufReader, Read};
 use std::path::Path;
 use std::process::Command;
-use anyhow::Context;
 use sleigh::Decompiler;
 use crate::command::CommandUtil;
-use crate::emulator::Emulator;
 
 mod command;
 
@@ -45,24 +43,25 @@ fn main() -> anyhow::Result<()> {
         .expect("unable to open `example`"));
     file.read_to_end(&mut code)
         .expect("unable to read file");
+    println!("read {len} bytes", len=code.len());
 
-    let (_, pcodes) = decompiler.translate(code.as_slice(), 0x0000);
-    for pcode in pcodes.iter() {
-        println!("address: {:?}", pcode.address);
-        println!("opcode: {:?}", pcode.opcode);
-        for varnode in pcode.vars.iter() {
-            println!("  varnode: {varnode:?}");
-        }
-        println!("outvar: {:?}", pcode.outvar);
-
-        println!();
-    }
+    // let (_, pcodes) = sleigh.translate(code.as_slice(), 0x0000);
+    // for pcode in pcodes.iter() {
+    //     println!("address: {:?}", pcode.address);
+    //     println!("opcode: {:?}", pcode.opcode);
+    //     for varnode in pcode.vars.iter() {
+    //         println!("  varnode: {varnode:?}");
+    //     }
+    //     println!("outvar: {:?}", pcode.outvar);
+    //
+    //     println!();
+    // }
 
     let (len, insts) = decompiler.disassemble(code.as_slice(), 0x0000);
     println!("{} {:?}", len, insts);
 
-    Emulator::emulate(pcodes.as_slice())
-        .context("unable to emulate pcode!")?;
+    // Emulator::emulate(pcodes.as_slice())
+    //     .context("unable to emulate pcode!")?;
 
     Ok(())
 }
