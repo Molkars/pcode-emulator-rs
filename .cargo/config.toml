@@ -3,3 +3,7 @@
 linker="lld-link.exe"
 ar="llvm-ar.exe"
 
+#[target.x86_64-unknown-linux-gnu]
+#rustflags = [
+#    "-l", "sleigh",
+#]
