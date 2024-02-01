@@ -7,4 +7,4 @@ WORKDIR /home/env/
 
 VOLUME /home/env/
 
-ENTRYPOINT /bin/sh
+ENTRYPOINT /bin/bash
