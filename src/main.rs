@@ -1,11 +1,12 @@
 #![allow(dead_code, unused_variables)]
 
+use std::collections::HashMap;
 use std::io::Write;
 use std::fs::File;
 use std::io::{BufReader, BufWriter, Read};
 use std::path::Path;
 use std::process::Command;
-use sleigh::Decompiler;
+use sleigh::{ArchState, Decompiler, DecompilerBuilder, X86Mode};
 use crate::command::CommandUtil;
 // use crate::sleigh::SleighBridge;
 
@@ -43,8 +44,9 @@ fn main() -> anyhow::Result<()> {
     println!("read {len} bytes", len = code.len());
 
     let mut decompiler = Decompiler::builder()
-        .x86(sleigh::X86Mode::Mode64)
+        .x86(X86Mode::Mode32)
         .build();
+
 
     println!("hi!");
     let (n, pcodes) = decompiler.translate(code.as_slice(), 0x0000);
@@ -65,10 +67,10 @@ fn main() -> anyhow::Result<()> {
     }
     println!("done with {}", pcodes.len());
 
-    let (len, insts) = decompiler.disassemble(code.as_slice(), 0x1000);
+    let (len, insts) = decompiler.disassemble(code.as_slice(), 0x0000);
     println!("instructions: {}", len);
 
-    let outfile = File::create("instructions.txt").unwrap();
+    let outfile = File::create("../sleigh-rs.txt").unwrap();
     let mut outfile = BufWriter::new(outfile);
     for inst in insts.iter() {
         writeln!(&mut outfile, "{:0>8X} | ({}) {}", inst.address, inst.mnemonic, inst.body)
