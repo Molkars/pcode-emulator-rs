@@ -366,7 +366,7 @@ dependencies = [
 [[package]]
 name = "sleigh"
 version = "0.1.0"
-source = "git+https://github.com/Molkars/sleigh#bb6b999dc6249273c09d2a1c8bcaa0d5535b7f46"
+source = "git+https://github.com/Molkars/sleigh#06987acf208b48db1c2f866f2113fe83410030ec"
 dependencies = [
  "cxx",
  "lazy_static",
