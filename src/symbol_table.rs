@@ -39,7 +39,7 @@ impl SymbolTable {
         let symbol_table = match symbol_table {
             Ok(output) => {
                 String::from_utf8(output.stdout)
-                    .unwrap_or_else(|e| {
+                    .unwrap_or_else(|_| {
                         eprintln!("unable to parse objdump output");
                         exit(1);
                     })
