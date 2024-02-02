@@ -27,5 +27,3 @@ $ cargo run -- emulate ./out.bin [...args]
 - [black-binary/sleigh-sys](https://github.com/black-binary/sleigh-sys), a rust-crate that I forked as a starting-point for interop with Sleigh C++
 - [Lucas Ritzdorf](https://github.com/LRitzdorf), a friend of mine who answered some of my questions about processor architectures & assembly formats
 
-<iframe src="https://github.com/LRitzdorf" title="Lucas">
-</iframe>
