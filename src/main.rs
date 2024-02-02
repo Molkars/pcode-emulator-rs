@@ -11,7 +11,6 @@ use pcode::emulator::Emulator;
 use pcode::symbol_table::SymbolTable;
 use crate::cli::{CLI, Command};
 use crate::util::ExecUtil;
-// use crate::sleigh::SleighBridge;
 
 mod util;
 mod cli;
@@ -88,8 +87,8 @@ fn get_base_address(path: impl AsRef<Path>) -> anyhow::Result<u64> {
         .arg("--x86-asm-syntax=intel")
         .arg("-d")
         .arg(path.as_ref())
-        .stdout_as_string()
-        .context("unable to run objdump")?;
+        .exec_and_get_stdout_as_string()
+        .context("unable to get objdump")?;
     symbol_table.lines()
         .nth(5)
         .ok_or_else(|| anyhow!("objdump presented invalid output: expected the first section on line 5"))

@@ -28,11 +28,11 @@ pub fn exec(s: impl AsRef<OsStr>) -> Command {
 }
 
 pub trait ExecUtil {
-    fn stdout_as_string(self) -> io::Result<String>;
+    fn exec_and_get_stdout_as_string(self) -> io::Result<String>;
 }
 
 impl<'a> ExecUtil for &'a mut Command {
-    fn stdout_as_string(self) -> io::Result<String> {
+    fn exec_and_get_stdout_as_string(self) -> io::Result<String> {
         let output = self.output()?;
         if !output.status.success() {
             Err(io::Error::new(ErrorKind::Other, ""))
@@ -48,7 +48,7 @@ impl<'a> ExecUtil for &'a mut Command {
 
 impl ExecUtil for Command {
     #[inline]
-    fn stdout_as_string(mut self) -> io::Result<String> {
-        <&mut Self as ExecUtil>::stdout_as_string(&mut self)
+    fn exec_and_get_stdout_as_string(mut self) -> io::Result<String> {
+        <&mut Self as ExecUtil>::exec_and_get_stdout_as_string(&mut self)
     }
 }
