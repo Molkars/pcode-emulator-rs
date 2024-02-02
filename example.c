@@ -11,6 +11,6 @@ main(int argc, char **argv)
         exit(1);
     }
 
-    fprintf(stdout, "hi!\n");
+    fprintf(stdout, "hi %s!\n", argv[1]);
     return 0;
 }
