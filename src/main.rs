@@ -43,19 +43,6 @@ fn main() -> anyhow::Result<()> {
         exit(1);
     }
 
-    // let symbol_table = OnceCell::new();
-    // let get_symbol_table = || {
-    //     symbol_table.get_or_init(move || build_symbol_table(binary))
-    // };
-    //
-    // let func = args.get(1).map(|symbol| {
-    //     let Some(symbol_info) = get_symbol_table().get(symbol) else {
-    //         eprintln!("unknown symbol: {}", symbol);
-    //         exit(1);
-    //     };
-    //     symbol_info
-    // });
-
     let content = {
         let mut code = Vec::new();
         let file = match File::open(binary) {
