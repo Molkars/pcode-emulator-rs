@@ -8,25 +8,7 @@ a simplistic-ish PCode emulator
 ### Prerequisites
 - [cargo (via rustup)](https://rustup.rs)
 - a generic c-compiler: `cc`
-
-<details>
-<summary>Example Program</summary>
-<code>
-
-#include <stdio.h>
-
-extern void exit(int);
-
-int main(int argc, char **argv) {
-    if (argc < 2) {
-        fprintf(stderr, "usage: example [arg]\n");
-        exit(1);
-    }
-    fprintf(stdout, "hi!\n");
-    return 0;
-}
-</code>
-</details>
+- a binary program [we'll compile our own](example.c)
 
 ```console
 $ sudo apt install gcc-multilib
