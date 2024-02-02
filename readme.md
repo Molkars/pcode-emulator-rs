@@ -8,7 +8,7 @@ a simplistic-ish PCode emulator
 ### Prerequisites
 - [cargo (via rustup)](https://rustup.rs)
 - a generic c-compiler: `cc`
-- a binary program [we'll compile our own](example.c)
+- a binary program ([we'll compile our own](example.c))
 
 ```console
 $ sudo apt install gcc-multilib
