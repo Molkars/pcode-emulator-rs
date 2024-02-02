@@ -1,6 +1,6 @@
 use anyhow::{anyhow, bail};
 use hashbrown::HashMap;
-use sleigh::PCode;
+use sleigh::{Opcode, PCode};
 use crate::symbol_table::SymbolTable;
 
 pub struct Emulator {}
@@ -17,7 +17,7 @@ impl Emulator {
 
         let mut emulator = Emulator {};
         for pcode in pcodes {
-            println!("{} | {:?}", pcode.address, pcode.opcode);
+            println!("{:X} | {:?}", pcode.address, pcode.opcode);
             emulator.emulate_one(pcode)?;
         }
 

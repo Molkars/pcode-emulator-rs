@@ -8,6 +8,7 @@ use std::process::{Command};
 pub fn read_file_as_bytes(path: impl AsRef<Path>) -> io::Result<Vec<u8>> {
     let mut file = File::open(path)?;
     let len = file.seek(SeekFrom::End(0))? as usize;
+    file.seek(SeekFrom::Start(0))?;
     let mut reader = BufReader::new(file);
     let mut out = Vec::with_capacity(len);
     reader.read_to_end(&mut out)?;
