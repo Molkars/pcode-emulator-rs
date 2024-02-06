@@ -53,6 +53,8 @@ fn main() -> anyhow::Result<()> {
                 Ok(())
             })?;
 
+            let registers = decompiler.get_all_registers();
+
             let symbol_table = SymbolTable::build_symbol_table(binary)?;
 
             let pcode_tree = {
@@ -75,7 +77,7 @@ fn main() -> anyhow::Result<()> {
                 entry_to_pcodes.insert(entry.to_string(), pcodes);
             }
 
-            Emulator::emulate(&entry_to_pcodes, "main", &symbol_table)?;
+            Emulator::emulate(&entry_to_pcodes, "main", &symbol_table, &registers)?;
         }
     };
 

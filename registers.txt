@@ -1,0 +1,6330 @@
+{
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8752,
+        size: 6,
+    }: "TR",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5031,
+        size: 1,
+    }: "XMM13_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4644,
+        size: 1,
+    }: "XMM1_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4842,
+        size: 2,
+    }: "XMM7_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4904,
+        size: 4,
+    }: "XMM9_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5026,
+        size: 2,
+    }: "XMM13_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5101,
+        size: 1,
+    }: "XMM15_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 0,
+        size: 2,
+    }: "AX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4248,
+        size: 4,
+    }: "FPUDataPointer",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5027,
+        size: 1,
+    }: "XMM13_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4872,
+        size: 1,
+    }: "XMM8_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5136,
+        size: 4,
+    }: "xmmTmp2_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4907,
+        size: 1,
+    }: "XMM9_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5066,
+        size: 2,
+    }: "XMM14_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4408,
+        size: 2,
+    }: "MM7_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4900,
+        size: 1,
+    }: "XMM9_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4996,
+        size: 4,
+    }: "XMM12_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4714,
+        size: 1,
+    }: "XMM3_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4898,
+        size: 2,
+    }: "XMM9_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4391,
+        size: 1,
+    }: "MM4_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4609,
+        size: 1,
+    }: "XMM0_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 512,
+        size: 1,
+    }: "CF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 1,
+    }: "XMM10_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 640,
+        size: 2,
+    }: "flags",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1880,
+        size: 8,
+    }: "BND1_UB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4976,
+        size: 16,
+    }: "YMM11_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 4,
+    }: "XMM7_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 32,
+    }: "YMM10",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 4,
+    }: "XMM11_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4374,
+        size: 1,
+    }: "MM2_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4906,
+        size: 2,
+    }: "XMM9_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4651,
+        size: 1,
+    }: "XMM1_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4773,
+        size: 1,
+    }: "XMM5_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4378,
+        size: 2,
+    }: "MM3_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4744,
+        size: 8,
+    }: "XMM4_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5064,
+        size: 4,
+    }: "XMM14_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4386,
+        size: 2,
+    }: "MM4_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4354,
+        size: 2,
+    }: "MM0_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4352,
+        size: 2,
+    }: "MM0_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4772,
+        size: 2,
+    }: "XMM5_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 527,
+        size: 1,
+    }: "RF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4838,
+        size: 1,
+    }: "XMM7_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4941,
+        size: 1,
+    }: "XMM10_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5092,
+        size: 1,
+    }: "XMM15_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5069,
+        size: 1,
+    }: "XMM14_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4708,
+        size: 2,
+    }: "XMM3_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4649,
+        size: 1,
+    }: "XMM1_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4382,
+        size: 2,
+    }: "MM3_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 32,
+    }: "YMM5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4808,
+        size: 2,
+    }: "XMM6_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8,
+        size: 4,
+    }: "EDX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5140,
+        size: 4,
+    }: "xmmTmp2_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4408,
+        size: 8,
+    }: "MM7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 16,
+    }: "XMM5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4782,
+        size: 1,
+    }: "XMM5_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5000,
+        size: 2,
+    }: "XMM12_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 16,
+    }: "XMM0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 776,
+        size: 4,
+    }: "DR2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4371,
+        size: 1,
+    }: "MM2_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4718,
+        size: 2,
+    }: "XMM3_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4377,
+        size: 1,
+    }: "MM3_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4682,
+        size: 2,
+    }: "XMM2_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4836,
+        size: 1,
+    }: "XMM7_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1,
+        size: 1,
+    }: "AH",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5004,
+        size: 4,
+    }: "XMM12_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 808,
+        size: 4,
+    }: "CR2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4362,
+        size: 1,
+    }: "MM1_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1024,
+        size: 4,
+    }: "TR0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 524,
+        size: 1,
+    }: "IOPL",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4712,
+        size: 1,
+    }: "XMM3_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4836,
+        size: 2,
+    }: "XMM7_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4908,
+        size: 1,
+    }: "XMM9_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5032,
+        size: 1,
+    }: "XMM13_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4376,
+        size: 1,
+    }: "MM3_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4396,
+        size: 2,
+    }: "MM5_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 4,
+    }: "XMM8_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1992,
+        size: 8,
+    }: "IA32_PL2_SSP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5034,
+        size: 2,
+    }: "XMM13_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5064,
+        size: 1,
+    }: "XMM14_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5128,
+        size: 8,
+    }: "xmmTmp1_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4805,
+        size: 1,
+    }: "XMM6_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4400,
+        size: 4,
+    }: "MM6_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 2008,
+        size: 8,
+    }: "IA32_PL0_SSP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 1,
+    }: "XMM6_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5102,
+        size: 2,
+    }: "XMM15_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 8,
+    }: "XMM4_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4642,
+        size: 1,
+    }: "XMM1_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4623,
+        size: 1,
+    }: "XMM0_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 2,
+    }: "XMM10_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 16,
+    }: "XMM14",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4942,
+        size: 2,
+    }: "XMM10_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4225,
+        size: 1,
+    }: "C1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 1,
+    }: "XMM0_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4743,
+        size: 1,
+    }: "XMM4_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 32,
+    }: "YMM8",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4784,
+        size: 16,
+    }: "YMM5_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 1,
+    }: "XMM9_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 32,
+    }: "YMM2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4807,
+        size: 1,
+    }: "XMM6_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4136,
+        size: 10,
+    }: "ST4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4684,
+        size: 4,
+    }: "XMM2_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4965,
+        size: 1,
+    }: "XMM11_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5091,
+        size: 1,
+    }: "XMM15_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5144,
+        size: 4,
+    }: "xmmTmp2_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4654,
+        size: 1,
+    }: "XMM1_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4364,
+        size: 4,
+    }: "MM1_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4868,
+        size: 4,
+    }: "XMM8_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4932,
+        size: 2,
+    }: "XMM10_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4126,
+        size: 10,
+    }: "ST3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4397,
+        size: 1,
+    }: "MM5_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4810,
+        size: 1,
+    }: "XMM6_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 8,
+    }: "XMM7_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4876,
+        size: 2,
+    }: "XMM8_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 12,
+        size: 1,
+    }: "BL",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4415,
+        size: 1,
+    }: "MM7_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4714,
+        size: 2,
+    }: "XMM3_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 8,
+    }: "XMM9_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4362,
+        size: 2,
+    }: "MM1_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5000,
+        size: 8,
+    }: "XMM12_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4400,
+        size: 8,
+    }: "MM6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4878,
+        size: 2,
+    }: "XMM8_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4967,
+        size: 1,
+    }: "XMM11_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4814,
+        size: 1,
+    }: "XMM6_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 16,
+    }: "XMM12",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 2,
+    }: "XMM13_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4968,
+        size: 2,
+    }: "XMM11_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5032,
+        size: 2,
+    }: "XMM13_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4973,
+        size: 1,
+    }: "XMM11_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 1,
+    }: "XMM1_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4,
+        size: 1,
+    }: "CL",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1896,
+        size: 8,
+    }: "BND2_UB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 32,
+    }: "YMM7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 2,
+    }: "XMM6_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5036,
+        size: 1,
+    }: "XMM13_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4741,
+        size: 1,
+    }: "XMM4_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4406,
+        size: 2,
+    }: "MM6_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4746,
+        size: 1,
+    }: "XMM4_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 1,
+    }: "XMM8_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4739,
+        size: 1,
+    }: "XMM4_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5026,
+        size: 1,
+    }: "XMM13_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4376,
+        size: 8,
+    }: "MM3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4716,
+        size: 4,
+    }: "XMM3_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 784,
+        size: 4,
+    }: "DR4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4648,
+        size: 2,
+    }: "XMM1_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4803,
+        size: 1,
+    }: "XMM6_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4368,
+        size: 2,
+    }: "MM2_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 16,
+    }: "XMM15",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4996,
+        size: 1,
+    }: "XMM12_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 32,
+    }: "YMM14",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 644,
+        size: 4,
+    }: "EIP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4680,
+        size: 8,
+    }: "XMM2_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4837,
+        size: 1,
+    }: "XMM7_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4676,
+        size: 4,
+    }: "XMM2_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4840,
+        size: 1,
+    }: "XMM7_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4910,
+        size: 2,
+    }: "XMM9_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 16,
+    }: "XMM11",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4647,
+        size: 1,
+    }: "XMM1_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4968,
+        size: 4,
+    }: "XMM11_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5092,
+        size: 4,
+    }: "XMM15_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4868,
+        size: 2,
+    }: "XMM8_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 32,
+    }: "YMM11",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 2,
+    }: "XMM9_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 8,
+    }: "XMM10_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 812,
+        size: 4,
+    }: "CR3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4908,
+        size: 4,
+    }: "XMM9_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 16,
+    }: "XMM8",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 32,
+    }: "YMM9",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5004,
+        size: 2,
+    }: "XMM12_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4615,
+        size: 1,
+    }: "XMM0_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4934,
+        size: 2,
+    }: "XMM10_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5030,
+        size: 1,
+    }: "XMM13_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4384,
+        size: 2,
+    }: "MM4_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 1,
+    }: "XMM7_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5098,
+        size: 2,
+    }: "XMM15_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4844,
+        size: 2,
+    }: "XMM7_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5136,
+        size: 8,
+    }: "xmmTmp2_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1856,
+        size: 16,
+    }: "BND0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5092,
+        size: 2,
+    }: "XMM15_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4902,
+        size: 2,
+    }: "XMM9_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 8,
+    }: "XMM1_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8720,
+        size: 2,
+    }: "GDTR_Limit",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1872,
+        size: 8,
+    }: "BND1_LB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4747,
+        size: 1,
+    }: "XMM4_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4744,
+        size: 2,
+    }: "XMM4_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4804,
+        size: 4,
+    }: "XMM6_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4874,
+        size: 2,
+    }: "XMM8_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5040,
+        size: 16,
+    }: "YMM13_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5124,
+        size: 4,
+    }: "xmmTmp1_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 514,
+        size: 1,
+    }: "PF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4244,
+        size: 2,
+    }: "FPUTagWord",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4716,
+        size: 2,
+    }: "XMM3_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4836,
+        size: 4,
+    }: "XMM7_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4904,
+        size: 1,
+    }: "XMM9_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4406,
+        size: 1,
+    }: "MM6_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4614,
+        size: 2,
+    }: "XMM0_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4616,
+        size: 8,
+    }: "XMM0_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4616,
+        size: 1,
+    }: "XMM0_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5070,
+        size: 2,
+    }: "XMM14_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 1,
+    }: "XMM15_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4389,
+        size: 1,
+    }: "MM4_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 28,
+        size: 2,
+    }: "DI",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 16,
+    }: "XMM10",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4617,
+        size: 1,
+    }: "XMM0_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 8,
+    }: "XMM11_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4936,
+        size: 4,
+    }: "XMM10_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 32,
+    }: "YMM13",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4740,
+        size: 1,
+    }: "XMM4_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4414,
+        size: 2,
+    }: "MM7_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4621,
+        size: 1,
+    }: "XMM0_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4227,
+        size: 1,
+    }: "C3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4719,
+        size: 1,
+    }: "XMM3_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4116,
+        size: 10,
+    }: "ST2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4745,
+        size: 1,
+    }: "XMM4_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4748,
+        size: 2,
+    }: "XMM4_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4906,
+        size: 1,
+    }: "XMM9_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 532,
+        size: 1,
+    }: "ID",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4994,
+        size: 1,
+    }: "XMM12_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 8,
+    }: "XMM13_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1792,
+        size: 8,
+    }: "BNDCFGS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4680,
+        size: 4,
+    }: "XMM2_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 2,
+    }: "XMM11_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5098,
+        size: 1,
+    }: "XMM15_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4910,
+        size: 1,
+    }: "XMM9_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8738,
+        size: 4,
+    }: "LDTR_Address",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4646,
+        size: 2,
+    }: "XMM1_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4874,
+        size: 1,
+    }: "XMM8_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4769,
+        size: 1,
+    }: "XMM5_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4708,
+        size: 4,
+    }: "XMM3_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4742,
+        size: 2,
+    }: "XMM4_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4393,
+        size: 1,
+    }: "MM5_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4772,
+        size: 1,
+    }: "XMM5_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 4,
+    }: "XMM13_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4387,
+        size: 1,
+    }: "MM4_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4682,
+        size: 1,
+    }: "XMM2_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4650,
+        size: 2,
+    }: "XMM1_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4974,
+        size: 2,
+    }: "XMM11_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 32,
+    }: "YMM1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4394,
+        size: 2,
+    }: "MM5_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4993,
+        size: 1,
+    }: "XMM12_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4408,
+        size: 1,
+    }: "MM7_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4962,
+        size: 1,
+    }: "XMM11_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4811,
+        size: 1,
+    }: "XMM6_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5029,
+        size: 1,
+    }: "XMM13_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4652,
+        size: 2,
+    }: "XMM1_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 13,
+        size: 1,
+    }: "BH",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4870,
+        size: 1,
+    }: "XMM8_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4898,
+        size: 1,
+    }: "XMM9_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4712,
+        size: 8,
+    }: "XMM3_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4963,
+        size: 1,
+    }: "XMM11_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4364,
+        size: 2,
+    }: "MM1_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5005,
+        size: 1,
+    }: "XMM12_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 0,
+        size: 1,
+    }: "AL",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1052,
+        size: 4,
+    }: "TR7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4363,
+        size: 1,
+    }: "MM1_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5028,
+        size: 1,
+    }: "XMM13_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4842,
+        size: 1,
+    }: "XMM7_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4676,
+        size: 1,
+    }: "XMM2_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4646,
+        size: 1,
+    }: "XMM1_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5120,
+        size: 8,
+    }: "xmmTmp1_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4619,
+        size: 1,
+    }: "XMM0_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4841,
+        size: 1,
+    }: "XMM7_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 16,
+        size: 2,
+    }: "SP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1028,
+        size: 4,
+    }: "TR1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4366,
+        size: 1,
+    }: "MM1_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4240,
+        size: 2,
+    }: "FPUControlWord",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4612,
+        size: 4,
+    }: "XMM0_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 531,
+        size: 1,
+    }: "VIP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4656,
+        size: 16,
+    }: "YMM1_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4674,
+        size: 1,
+    }: "XMM2_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4740,
+        size: 4,
+    }: "XMM4_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 525,
+        size: 1,
+    }: "NT",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 16,
+    }: "XMM2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4365,
+        size: 1,
+    }: "MM1_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4686,
+        size: 1,
+    }: "XMM2_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4751,
+        size: 1,
+    }: "XMM4_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4361,
+        size: 1,
+    }: "MM1_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4846,
+        size: 2,
+    }: "XMM7_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4872,
+        size: 2,
+    }: "XMM8_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4834,
+        size: 2,
+    }: "XMM7_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4873,
+        size: 1,
+    }: "XMM8_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5004,
+        size: 1,
+    }: "XMM12_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 8,
+    }: "XMM14_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4411,
+        size: 1,
+    }: "MM7_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4412,
+        size: 4,
+    }: "MM7_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4380,
+        size: 1,
+    }: "MM3_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4932,
+        size: 1,
+    }: "XMM10_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5006,
+        size: 2,
+    }: "XMM12_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5064,
+        size: 2,
+    }: "XMM14_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4776,
+        size: 4,
+    }: "XMM5_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4808,
+        size: 8,
+    }: "XMM6_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5065,
+        size: 1,
+    }: "XMM14_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4392,
+        size: 2,
+    }: "MM5_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4843,
+        size: 1,
+    }: "XMM7_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8704,
+        size: 6,
+    }: "IDTR",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1904,
+        size: 16,
+    }: "BND3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 24,
+        size: 4,
+    }: "ESI",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4779,
+        size: 1,
+    }: "XMM5_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4938,
+        size: 2,
+    }: "XMM10_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1904,
+        size: 8,
+    }: "BND3_LB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4872,
+        size: 8,
+    }: "XMM8_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4802,
+        size: 1,
+    }: "XMM6_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4814,
+        size: 2,
+    }: "XMM6_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4870,
+        size: 2,
+    }: "XMM8_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4680,
+        size: 1,
+    }: "XMM2_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 2,
+    }: "XMM5_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8720,
+        size: 6,
+    }: "GDTR",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1040,
+        size: 4,
+    }: "TR4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4620,
+        size: 4,
+    }: "XMM0_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4386,
+        size: 1,
+    }: "MM4_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4943,
+        size: 1,
+    }: "XMM10_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1856,
+        size: 8,
+    }: "BND0_LB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4146,
+        size: 10,
+    }: "ST5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4706,
+        size: 2,
+    }: "XMM3_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5008,
+        size: 16,
+    }: "YMM12_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4815,
+        size: 1,
+    }: "XMM6_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4410,
+        size: 1,
+    }: "MM7_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4940,
+        size: 4,
+    }: "XMM10_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4961,
+        size: 1,
+    }: "XMM11_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5144,
+        size: 8,
+    }: "xmmTmp2_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4395,
+        size: 1,
+    }: "MM5_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4716,
+        size: 1,
+    }: "XMM3_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 526,
+        size: 1,
+    }: "F15",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4717,
+        size: 1,
+    }: "XMM3_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4816,
+        size: 16,
+    }: "YMM6_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4380,
+        size: 2,
+    }: "MM3_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4709,
+        size: 1,
+    }: "XMM3_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4929,
+        size: 1,
+    }: "XMM10_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1048,
+        size: 4,
+    }: "TR6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4706,
+        size: 1,
+    }: "XMM3_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5068,
+        size: 4,
+    }: "XMM14_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4752,
+        size: 16,
+    }: "YMM4_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4376,
+        size: 2,
+    }: "MM3_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4749,
+        size: 1,
+    }: "XMM4_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4933,
+        size: 1,
+    }: "XMM10_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4806,
+        size: 2,
+    }: "XMM6_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4620,
+        size: 2,
+    }: "XMM0_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 2,
+    }: "XMM14_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5102,
+        size: 1,
+    }: "XMM15_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5136,
+        size: 16,
+    }: "xmmTmp2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4226,
+        size: 1,
+    }: "C2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4614,
+        size: 1,
+    }: "XMM0_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4360,
+        size: 8,
+    }: "MM1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4720,
+        size: 16,
+    }: "YMM3_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4776,
+        size: 8,
+    }: "XMM5_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4404,
+        size: 4,
+    }: "MM6_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4408,
+        size: 4,
+    }: "MM7_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4401,
+        size: 1,
+    }: "MM6_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4780,
+        size: 4,
+    }: "XMM5_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 1,
+    }: "XMM13_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4679,
+        size: 1,
+    }: "XMM2_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4366,
+        size: 2,
+    }: "MM1_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 2,
+    }: "XMM3_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4383,
+        size: 1,
+    }: "MM3_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4778,
+        size: 1,
+    }: "XMM5_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5061,
+        size: 1,
+    }: "XMM14_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4905,
+        size: 1,
+    }: "XMM9_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 260,
+        size: 2,
+    }: "SS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 2000,
+        size: 8,
+    }: "IA32_PL1_SSP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 4,
+    }: "XMM4_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4738,
+        size: 1,
+    }: "XMM4_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4901,
+        size: 1,
+    }: "XMM9_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5037,
+        size: 1,
+    }: "XMM13_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5096,
+        size: 2,
+    }: "XMM15_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8736,
+        size: 6,
+    }: "LDTR",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4938,
+        size: 1,
+    }: "XMM10_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 4,
+    }: "XMM3_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4354,
+        size: 1,
+    }: "MM0_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4931,
+        size: 1,
+    }: "XMM10_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 276,
+        size: 4,
+    }: "GS_OFFSET",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4705,
+        size: 1,
+    }: "XMM3_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4972,
+        size: 1,
+    }: "XMM11_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 523,
+        size: 1,
+    }: "OF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4738,
+        size: 2,
+    }: "XMM4_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 2,
+    }: "XMM4_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4711,
+        size: 1,
+    }: "XMM3_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4833,
+        size: 1,
+    }: "XMM7_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5060,
+        size: 4,
+    }: "XMM14_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4385,
+        size: 1,
+    }: "MM4_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1864,
+        size: 8,
+    }: "BND0_UB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1032,
+        size: 4,
+    }: "TR2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 4,
+    }: "XMM5_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4934,
+        size: 1,
+    }: "XMM10_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 8,
+    }: "XMM12_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4368,
+        size: 4,
+    }: "MM2_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5089,
+        size: 1,
+    }: "XMM15_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 1,
+    }: "XMM12_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4879,
+        size: 1,
+    }: "XMM8_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4772,
+        size: 4,
+    }: "XMM5_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4974,
+        size: 1,
+    }: "XMM11_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4412,
+        size: 2,
+    }: "MM7_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4877,
+        size: 1,
+    }: "XMM8_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4904,
+        size: 2,
+    }: "XMM9_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4834,
+        size: 1,
+    }: "XMM7_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4936,
+        size: 8,
+    }: "XMM10_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5064,
+        size: 8,
+    }: "XMM14_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 16,
+    }: "XMM6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 792,
+        size: 4,
+    }: "DR6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4998,
+        size: 1,
+    }: "XMM12_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5068,
+        size: 1,
+    }: "XMM14_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4357,
+        size: 1,
+    }: "MM0_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4400,
+        size: 1,
+    }: "MM6_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 8,
+    }: "XMM0_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4932,
+        size: 4,
+    }: "XMM10_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4940,
+        size: 2,
+    }: "XMM10_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4612,
+        size: 1,
+    }: "XMM0_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4713,
+        size: 1,
+    }: "XMM3_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4740,
+        size: 2,
+    }: "XMM4_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4911,
+        size: 1,
+    }: "XMM9_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4611,
+        size: 1,
+    }: "XMM0_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4968,
+        size: 8,
+    }: "XMM11_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 28,
+        size: 4,
+    }: "EDI",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4972,
+        size: 4,
+    }: "XMM11_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4781,
+        size: 1,
+    }: "XMM5_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4407,
+        size: 1,
+    }: "MM6_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4684,
+        size: 2,
+    }: "XMM2_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4360,
+        size: 1,
+    }: "MM1_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4674,
+        size: 2,
+    }: "XMM2_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4106,
+        size: 10,
+    }: "ST1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4712,
+        size: 2,
+    }: "XMM3_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4774,
+        size: 1,
+    }: "XMM5_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 788,
+        size: 4,
+    }: "DR5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4676,
+        size: 2,
+    }: "XMM2_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 515,
+        size: 1,
+    }: "F3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1912,
+        size: 8,
+    }: "BND3_UB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4775,
+        size: 1,
+    }: "XMM5_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4804,
+        size: 1,
+    }: "XMM6_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4930,
+        size: 2,
+    }: "XMM10_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4935,
+        size: 1,
+    }: "XMM10_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4404,
+        size: 2,
+    }: "MM6_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4804,
+        size: 2,
+    }: "XMM6_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4684,
+        size: 1,
+    }: "XMM2_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8,
+        size: 1,
+    }: "DL",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4715,
+        size: 1,
+    }: "XMM3_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4810,
+        size: 2,
+    }: "XMM6_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4940,
+        size: 1,
+    }: "XMM10_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4962,
+        size: 2,
+    }: "XMM11_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 522,
+        size: 1,
+    }: "DF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4780,
+        size: 2,
+    }: "XMM5_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5039,
+        size: 1,
+    }: "XMM13_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5059,
+        size: 1,
+    }: "XMM14_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5120,
+        size: 16,
+    }: "xmmTmp1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 1,
+    }: "XMM2_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1984,
+        size: 8,
+    }: "SSP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 1,
+    }: "XMM5_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4388,
+        size: 4,
+    }: "MM4_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4654,
+        size: 2,
+    }: "XMM1_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4812,
+        size: 2,
+    }: "XMM6_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 32,
+    }: "YMM4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4995,
+        size: 1,
+    }: "XMM12_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4776,
+        size: 1,
+    }: "XMM5_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5028,
+        size: 4,
+    }: "XMM13_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5030,
+        size: 2,
+    }: "XMM13_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5038,
+        size: 2,
+    }: "XMM13_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5072,
+        size: 16,
+    }: "YMM14_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8754,
+        size: 4,
+    }: "TR_Address",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5062,
+        size: 1,
+    }: "XMM14_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4900,
+        size: 2,
+    }: "XMM9_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8752,
+        size: 2,
+    }: "TR_Limit",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4776,
+        size: 2,
+    }: "XMM5_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4622,
+        size: 1,
+    }: "XMM0_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4801,
+        size: 1,
+    }: "XMM6_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4930,
+        size: 1,
+    }: "XMM10_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4808,
+        size: 1,
+    }: "XMM6_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5060,
+        size: 2,
+    }: "XMM14_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 258,
+        size: 2,
+    }: "CS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5094,
+        size: 2,
+    }: "XMM15_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 1,
+    }: "XMM14_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4409,
+        size: 1,
+    }: "MM7_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4618,
+        size: 1,
+    }: "XMM0_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5063,
+        size: 1,
+    }: "XMM14_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4356,
+        size: 2,
+    }: "MM0_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 32,
+    }: "YMM12",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5035,
+        size: 1,
+    }: "XMM13_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 1,
+    }: "XMM3_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4744,
+        size: 4,
+    }: "XMM4_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4394,
+        size: 1,
+    }: "MM5_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 9,
+        size: 1,
+    }: "DH",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4352,
+        size: 8,
+    }: "MM0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4384,
+        size: 8,
+    }: "MM4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 1,
+    }: "XMM4_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4813,
+        size: 1,
+    }: "XMM6_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 517,
+        size: 1,
+    }: "F5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4166,
+        size: 10,
+    }: "ST7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1044,
+        size: 4,
+    }: "TR5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4712,
+        size: 4,
+    }: "XMM3_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 644,
+        size: 2,
+    }: "IP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 0,
+        size: 4,
+    }: "EAX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4367,
+        size: 1,
+    }: "MM1_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4358,
+        size: 2,
+    }: "MM0_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4400,
+        size: 2,
+    }: "MM6_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4352,
+        size: 4,
+    }: "MM0_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4648,
+        size: 4,
+    }: "XMM1_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 8,
+    }: "XMM3_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4402,
+        size: 1,
+    }: "MM6_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4620,
+        size: 1,
+    }: "XMM0_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4771,
+        size: 1,
+    }: "XMM5_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4718,
+        size: 1,
+    }: "XMM3_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4375,
+        size: 1,
+    }: "MM2_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4648,
+        size: 1,
+    }: "XMM1_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5058,
+        size: 1,
+    }: "XMM14_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4971,
+        size: 1,
+    }: "XMM11_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4688,
+        size: 16,
+    }: "YMM2_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4812,
+        size: 4,
+    }: "XMM6_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5032,
+        size: 4,
+    }: "XMM13_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4783,
+        size: 1,
+    }: "XMM5_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4768,
+        size: 8,
+    }: "XMM5_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5000,
+        size: 4,
+    }: "XMM12_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 8,
+    }: "XMM15_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4848,
+        size: 16,
+    }: "YMM7_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4370,
+        size: 1,
+    }: "MM2_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4937,
+        size: 1,
+    }: "XMM10_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4359,
+        size: 1,
+    }: "MM0_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 256,
+        size: 2,
+    }: "ES",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5007,
+        size: 1,
+    }: "XMM12_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4618,
+        size: 2,
+    }: "XMM0_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4746,
+        size: 2,
+    }: "XMM4_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 4,
+    }: "XMM6_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4680,
+        size: 2,
+    }: "XMM2_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4678,
+        size: 2,
+    }: "XMM2_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5006,
+        size: 1,
+    }: "XMM12_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5036,
+        size: 4,
+    }: "XMM13_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4368,
+        size: 8,
+    }: "MM2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4912,
+        size: 16,
+    }: "YMM9_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5090,
+        size: 2,
+    }: "XMM15_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5132,
+        size: 4,
+    }: "xmmTmp1_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4897,
+        size: 1,
+    }: "XMM9_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4414,
+        size: 1,
+    }: "MM7_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4966,
+        size: 1,
+    }: "XMM11_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4904,
+        size: 8,
+    }: "XMM9_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 4,
+    }: "XMM12_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4999,
+        size: 1,
+    }: "XMM12_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5,
+        size: 1,
+    }: "CH",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 640,
+        size: 4,
+    }: "eflags",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1036,
+        size: 4,
+    }: "TR3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4876,
+        size: 4,
+    }: "XMM8_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4384,
+        size: 1,
+    }: "MM4_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4686,
+        size: 2,
+    }: "XMM2_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4869,
+        size: 1,
+    }: "XMM8_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 2,
+    }: "XMM1_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5025,
+        size: 1,
+    }: "XMM13_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4,
+        size: 2,
+    }: "CX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4942,
+        size: 1,
+    }: "XMM10_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4998,
+        size: 2,
+    }: "XMM12_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5024,
+        size: 16,
+    }: "XMM13",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5028,
+        size: 2,
+    }: "XMM13_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4939,
+        size: 1,
+    }: "XMM10_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5002,
+        size: 2,
+    }: "XMM12_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 12,
+        size: 2,
+    }: "BX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 529,
+        size: 1,
+    }: "AC",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4355,
+        size: 1,
+    }: "MM0_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4707,
+        size: 1,
+    }: "XMM3_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4782,
+        size: 2,
+    }: "XMM5_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4388,
+        size: 1,
+    }: "MM4_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4960,
+        size: 1,
+    }: "XMM11_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5002,
+        size: 1,
+    }: "XMM12_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4368,
+        size: 1,
+    }: "MM2_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 4,
+    }: "XMM0_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5038,
+        size: 1,
+    }: "XMM13_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 2,
+    }: "XMM8_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4358,
+        size: 1,
+    }: "MM0_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4685,
+        size: 1,
+    }: "XMM2_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4774,
+        size: 2,
+    }: "XMM5_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4778,
+        size: 2,
+    }: "XMM5_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4748,
+        size: 1,
+    }: "XMM4_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4835,
+        size: 1,
+    }: "XMM7_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4840,
+        size: 4,
+    }: "XMM7_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5067,
+        size: 1,
+    }: "XMM14_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4372,
+        size: 2,
+    }: "MM2_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4246,
+        size: 2,
+    }: "FPULastInstructionOpcode",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4405,
+        size: 1,
+    }: "MM6_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4876,
+        size: 1,
+    }: "XMM8_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5058,
+        size: 2,
+    }: "XMM14_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5097,
+        size: 1,
+    }: "XMM15_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5148,
+        size: 4,
+    }: "xmmTmp2_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4616,
+        size: 2,
+    }: "XMM0_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 12,
+        size: 4,
+    }: "EBX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 264,
+        size: 2,
+    }: "FS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 528,
+        size: 1,
+    }: "VM",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 796,
+        size: 4,
+    }: "DR7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4403,
+        size: 1,
+    }: "MM6_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 262,
+        size: 2,
+    }: "DS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4412,
+        size: 1,
+    }: "MM7_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4648,
+        size: 8,
+    }: "XMM1_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4252,
+        size: 4,
+    }: "FPUInstructionPointer",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4652,
+        size: 1,
+    }: "XMM1_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4642,
+        size: 2,
+    }: "XMM1_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 8,
+    }: "XMM2_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 780,
+        size: 4,
+    }: "DR3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 4,
+    }: "XMM2_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4675,
+        size: 1,
+    }: "XMM2_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4710,
+        size: 2,
+    }: "XMM3_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4736,
+        size: 16,
+    }: "XMM4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 16,
+    }: "XMM7",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4866,
+        size: 1,
+    }: "XMM8_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4871,
+        size: 1,
+    }: "XMM8_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4903,
+        size: 1,
+    }: "XMM9_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4936,
+        size: 2,
+    }: "XMM10_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4936,
+        size: 1,
+    }: "XMM10_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4655,
+        size: 1,
+    }: "XMM1_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 24,
+        size: 2,
+    }: "SI",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4610,
+        size: 1,
+    }: "XMM0_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 16,
+    }: "XMM3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4398,
+        size: 1,
+    }: "MM5_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4780,
+        size: 1,
+    }: "XMM5_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 772,
+        size: 4,
+    }: "DR1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4710,
+        size: 1,
+    }: "XMM3_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 768,
+        size: 4,
+    }: "DR0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4844,
+        size: 1,
+    }: "XMM7_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4944,
+        size: 16,
+    }: "YMM10_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4964,
+        size: 4,
+    }: "XMM11_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4838,
+        size: 2,
+    }: "XMM7_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4650,
+        size: 1,
+    }: "XMM1_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5032,
+        size: 8,
+    }: "XMM13_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4224,
+        size: 1,
+    }: "C0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 516,
+        size: 1,
+    }: "AF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4413,
+        size: 1,
+    }: "MM7_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4847,
+        size: 1,
+    }: "XMM7_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5095,
+        size: 1,
+    }: "XMM15_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4370,
+        size: 2,
+    }: "MM2_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 800,
+        size: 4,
+    }: "CR0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 32,
+    }: "YMM0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4972,
+        size: 2,
+    }: "XMM11_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4964,
+        size: 2,
+    }: "XMM11_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 4,
+    }: "XMM1_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4352,
+        size: 1,
+    }: "MM0_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4608,
+        size: 2,
+    }: "XMM0_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4808,
+        size: 4,
+    }: "XMM6_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4748,
+        size: 4,
+    }: "XMM4_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4840,
+        size: 8,
+    }: "XMM7_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4908,
+        size: 2,
+    }: "XMM9_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 2,
+    }: "XMM15_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4372,
+        size: 4,
+    }: "MM2_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4612,
+        size: 2,
+    }: "XMM0_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4242,
+        size: 2,
+    }: "FPUStatusWord",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5103,
+        size: 1,
+    }: "XMM15_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4376,
+        size: 4,
+    }: "MM3_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4652,
+        size: 4,
+    }: "XMM1_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4966,
+        size: 2,
+    }: "XMM11_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4802,
+        size: 2,
+    }: "XMM6_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4809,
+        size: 1,
+    }: "XMM6_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4390,
+        size: 1,
+    }: "MM4_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4744,
+        size: 1,
+    }: "XMM4_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5096,
+        size: 8,
+    }: "XMM15_Qb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1888,
+        size: 8,
+    }: "BND2_LB",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4839,
+        size: 1,
+    }: "XMM7_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5128,
+        size: 4,
+    }: "xmmTmp1_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 272,
+        size: 4,
+    }: "FS_OFFSET",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4840,
+        size: 2,
+    }: "XMM7_We",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 16,
+        size: 4,
+    }: "ESP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4356,
+        size: 4,
+    }: "MM0_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4379,
+        size: 1,
+    }: "MM3_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4970,
+        size: 1,
+    }: "XMM11_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5001,
+        size: 1,
+    }: "XMM12_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 4,
+    }: "XMM15_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4994,
+        size: 2,
+    }: "XMM12_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8192,
+        size: 4,
+    }: "contextreg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5100,
+        size: 2,
+    }: "XMM15_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5033,
+        size: 1,
+    }: "XMM13_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 20,
+        size: 4,
+    }: "EBP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4360,
+        size: 2,
+    }: "MM1_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 816,
+        size: 4,
+    }: "CR4",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4382,
+        size: 1,
+    }: "MM3_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4704,
+        size: 32,
+    }: "YMM3",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5094,
+        size: 1,
+    }: "XMM15_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4384,
+        size: 4,
+    }: "MM4_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4644,
+        size: 2,
+    }: "XMM1_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4750,
+        size: 1,
+    }: "XMM4_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1888,
+        size: 16,
+    }: "BND2",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4678,
+        size: 1,
+    }: "XMM2_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4399,
+        size: 1,
+    }: "MM5_Bh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 20,
+        size: 2,
+    }: "BP",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4864,
+        size: 8,
+    }: "XMM8_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1800,
+        size: 8,
+    }: "BNDCFGU",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5057,
+        size: 1,
+    }: "XMM14_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4875,
+        size: 1,
+    }: "XMM8_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4992,
+        size: 2,
+    }: "XMM12_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4388,
+        size: 2,
+    }: "MM4_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4396,
+        size: 4,
+    }: "MM5_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1872,
+        size: 16,
+    }: "BND1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4770,
+        size: 2,
+    }: "XMM5_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4996,
+        size: 2,
+    }: "XMM12_Wc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5060,
+        size: 1,
+    }: "XMM14_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 513,
+        size: 1,
+    }: "F1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4156,
+        size: 10,
+    }: "ST6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1536,
+        size: 8,
+    }: "XCR0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 1808,
+        size: 8,
+    }: "BNDSTATUS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 266,
+        size: 2,
+    }: "GS",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 518,
+        size: 1,
+    }: "ZF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4624,
+        size: 16,
+    }: "YMM0_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4902,
+        size: 1,
+    }: "XMM9_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4390,
+        size: 2,
+    }: "MM4_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4997,
+        size: 1,
+    }: "XMM12_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4770,
+        size: 1,
+    }: "XMM5_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4644,
+        size: 4,
+    }: "XMM1_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5000,
+        size: 1,
+    }: "XMM12_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 32,
+    }: "YMM6",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5093,
+        size: 1,
+    }: "XMM15_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4832,
+        size: 2,
+    }: "XMM7_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4096,
+        size: 10,
+    }: "ST0",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8722,
+        size: 4,
+    }: "GDTR_Address",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4687,
+        size: 1,
+    }: "XMM2_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4645,
+        size: 1,
+    }: "XMM1_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4681,
+        size: 1,
+    }: "XMM2_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5003,
+        size: 1,
+    }: "XMM12_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8736,
+        size: 2,
+    }: "LDTR_Limit",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5104,
+        size: 16,
+    }: "YMM15_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5066,
+        size: 1,
+    }: "XMM14_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5090,
+        size: 1,
+    }: "XMM15_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8706,
+        size: 4,
+    }: "IDTR_Address",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4353,
+        size: 1,
+    }: "MM0_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4812,
+        size: 1,
+    }: "XMM6_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4928,
+        size: 4,
+    }: "XMM10_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4868,
+        size: 1,
+    }: "XMM8_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4969,
+        size: 1,
+    }: "XMM11_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4677,
+        size: 1,
+    }: "XMM2_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4867,
+        size: 1,
+    }: "XMM8_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4653,
+        size: 1,
+    }: "XMM1_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4964,
+        size: 1,
+    }: "XMM11_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4374,
+        size: 2,
+    }: "MM2_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4640,
+        size: 16,
+    }: "XMM1",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4372,
+        size: 1,
+    }: "MM2_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 519,
+        size: 1,
+    }: "SF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4613,
+        size: 1,
+    }: "XMM0_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5062,
+        size: 2,
+    }: "XMM14_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5068,
+        size: 2,
+    }: "XMM14_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5070,
+        size: 1,
+    }: "XMM14_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5100,
+        size: 1,
+    }: "XMM15_Bm",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4396,
+        size: 1,
+    }: "MM5_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4381,
+        size: 1,
+    }: "MM3_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4673,
+        size: 1,
+    }: "XMM2_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4398,
+        size: 2,
+    }: "MM5_Wd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4865,
+        size: 1,
+    }: "XMM8_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4878,
+        size: 1,
+    }: "XMM8_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4750,
+        size: 2,
+    }: "XMM4_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4866,
+        size: 2,
+    }: "XMM8_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 520,
+        size: 1,
+    }: "TF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4622,
+        size: 2,
+    }: "XMM0_Wh",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4402,
+        size: 2,
+    }: "MM6_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5096,
+        size: 1,
+    }: "XMM15_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5099,
+        size: 1,
+    }: "XMM15_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4364,
+        size: 1,
+    }: "MM1_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4641,
+        size: 1,
+    }: "XMM1_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4683,
+        size: 1,
+    }: "XMM2_Bl",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4845,
+        size: 1,
+    }: "XMM7_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4844,
+        size: 4,
+    }: "XMM7_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4643,
+        size: 1,
+    }: "XMM1_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4404,
+        size: 1,
+    }: "MM6_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4737,
+        size: 1,
+    }: "XMM4_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4872,
+        size: 4,
+    }: "XMM8_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4909,
+        size: 1,
+    }: "XMM9_Bn",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8,
+        size: 2,
+    }: "DX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4899,
+        size: 1,
+    }: "XMM9_Bd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4968,
+        size: 1,
+    }: "XMM11_Bi",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5120,
+        size: 4,
+    }: "xmmTmp1_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4610,
+        size: 2,
+    }: "XMM0_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4900,
+        size: 4,
+    }: "XMM9_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4970,
+        size: 2,
+    }: "XMM11_Wf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4777,
+        size: 1,
+    }: "XMM5_Bj",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4806,
+        size: 1,
+    }: "XMM6_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4392,
+        size: 8,
+    }: "MM5",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 16,
+    }: "XMM9",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4373,
+        size: 1,
+    }: "MM2_Bf",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4672,
+        size: 2,
+    }: "XMM2_Wa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4742,
+        size: 1,
+    }: "XMM4_Bg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5088,
+        size: 32,
+    }: "YMM15",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5096,
+        size: 4,
+    }: "XMM15_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4228,
+        size: 4,
+    }: "MXCSR",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4,
+        size: 4,
+    }: "ECX",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4616,
+        size: 4,
+    }: "XMM0_Dc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4846,
+        size: 1,
+    }: "XMM7_Bo",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4392,
+        size: 4,
+    }: "MM5_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4410,
+        size: 2,
+    }: "MM7_Wb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4356,
+        size: 1,
+    }: "MM0_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4800,
+        size: 8,
+    }: "XMM6_Qa",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4378,
+        size: 1,
+    }: "MM3_Bc",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4880,
+        size: 16,
+    }: "YMM8_H",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5036,
+        size: 2,
+    }: "XMM13_Wg",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4380,
+        size: 4,
+    }: "MM3_Db",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5100,
+        size: 4,
+    }: "XMM15_Dd",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 521,
+        size: 1,
+    }: "IF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4708,
+        size: 1,
+    }: "XMM3_Be",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5034,
+        size: 1,
+    }: "XMM13_Bk",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4975,
+        size: 1,
+    }: "XMM11_Bp",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 530,
+        size: 1,
+    }: "VIF",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 8704,
+        size: 2,
+    }: "IDTR_Limit",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4896,
+        size: 4,
+    }: "XMM9_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4369,
+        size: 1,
+    }: "MM2_Bb",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4360,
+        size: 4,
+    }: "MM1_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 4392,
+        size: 1,
+    }: "MM5_Ba",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5056,
+        size: 4,
+    }: "XMM14_Da",
+    VarnodeData {
+        space: AddrSpace {
+            name: "register",
+            type_: Processor,
+        },
+        offset: 5071,
+        size: 1,
+    }: "XMM14_Bp",
+}

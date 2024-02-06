@@ -8,11 +8,16 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.79"
 clap = { version = "4.4.18", features = ["derive"] }
+eframe = "0.25.0"
 hashbrown = "0.14.3"
 itertools = "0.12.1"
-num = { version = "0.4.1", features = ["rand", "serde", "num-bigint", "alloc", "libm"] }
+serde = "1.0.196"
+serde_derive = "1.0.196"
 #sleigh = { path="sleigh" }
-sleigh = { git="https://github.com/Molkars/sleigh" }
+sleigh = { git="https://github.com/Molkars/sleigh", features = ["serde"] }
+env_logger = "0.11.1"
+serde_value = { git = "https://github.com/Molkars/serde_value", version = "0.1.0" }
+num = "0.4.1"
 
 [workspace]
 members = []
