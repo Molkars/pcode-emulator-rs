@@ -101,13 +101,21 @@ impl Emulator<'_> {
                 dest.copy_from_slice(&bytes[..size]);
             }
         } else {
-            let (sign, unsigned) = value.to_bytes_le();
+            let (sign, mut unsigned) = value.to_bytes_le();
 
             let node_size = node.size as usize;
             if unsigned.len() >= node_size {
-                todo!()
+                todo!("this needs to use signed bytes because the overflow can be ignored here")
             } else {
+                let num_missing_octets = node_size - unsigned.len();
+                unsigned.extend(std::iter::repeat(0).take(num_missing_octets));
 
+                if matches!(sign, Sign::Minus) {
+                    for byte in &mut unsigned {
+                        *byte = !*byte;
+                    }
+                    unsigned[0] = unsigned[0].overflowing_add(1).0;
+                }
             }
         }
     }
