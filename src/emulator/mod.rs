@@ -9,6 +9,7 @@ use num::{BigInt, BigUint, CheckedSub, ToPrimitive};
 use num::bigint::Sign;
 use num::traits::{FromBytes, ToBytes};
 use sleigh::{AddrSpace, Opcode, PCode, SpaceType, VarnodeData};
+use crate::binary::Binary;
 use crate::inspect;
 use crate::symbol_table::SymbolTable;
 
@@ -58,35 +59,26 @@ impl Space {
 }
 
 pub struct Emulator<'a> {
-    pcodes: &'a HashMap<String, Vec<PCode>>,
-    registers: &'a HashMap<VarnodeData, String>,
-    symbol_table: &'a SymbolTable,
+    binary: &'a Binary,
     memory: HashMap<AddrSpace, Space>,
     ram: Space,
 }
 
 impl Emulator<'_> {
-    pub fn emulate(
-        pcodes: &HashMap<String, Vec<PCode>>,
-        func: &str,
-        symbol_table: &SymbolTable,
-        registers: &HashMap<VarnodeData, String>,
-    ) -> anyhow::Result<()> {
+    pub fn emulate(binary: &Binary, func: &str) -> anyhow::Result<()> {
         // let func_info = symbol_table.get(func)
         //     .ok_or_else(|| anyhow!("symbol {func:?} not found in symbol-table"))?;
 
-        let func_pcode = pcodes.get(func)
+        let func_pcode = binary.function_table.get(func)
             .ok_or_else(|| anyhow!("symbol {func:?} not found in pcode-table"))?;
 
         let mut emulator = Emulator {
-            pcodes,
-            symbol_table,
-            registers,
+            binary,
             memory: HashMap::new(),
             ram: Space::new(false),
         };
 
-        for register in registers.keys() {
+        for register in binary.registers.keys() {
             emulator.memory
                 .entry(register.space.clone())
                 .or_insert_with(|| Space::new(register.space.is_big_endian));
@@ -97,8 +89,9 @@ impl Emulator<'_> {
             is_big_endian: false,
         }, Space::new(false));
 
-        println!("emulating {func} ({} pcodes)", func_pcode.len());
-        for pcode in func_pcode {
+        let pcodes = binary.function_pcode(func)?;
+        println!("emulating {func} ({} pcodes)", pcodes.len());
+        for pcode in pcodes {
             println!("{:X} | {:?}", pcode.address, pcode.opcode);
             emulator.emulate_one(pcode)?;
         }
@@ -281,7 +274,9 @@ impl Emulator<'_> {
                 let result = value.count_ones();
                 self.write_uint(output, &BigUint::from(result));
             }
-
+            Opcode::Branch => {
+                dbg!(&pcode);
+            }
             _ => bail!("unimplemented opcode: {:?}", pcode.opcode),
         };
 

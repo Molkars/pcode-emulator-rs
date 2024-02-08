@@ -7,6 +7,7 @@ mod util;
 mod inspector;
 pub mod symbol_table;
 pub mod emulator;
+pub mod binary;
 
 
 #[cfg(debug_assertions)]

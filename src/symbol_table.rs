@@ -15,7 +15,6 @@ pub struct SymbolInfo {
     pub flags: String,
 }
 
-
 impl SymbolTable {
     #[inline]
     pub fn get<Q: ?Sized + Hash + Eq>(&self, key: &Q) -> Option<&SymbolInfo>
@@ -68,6 +67,7 @@ impl SymbolTable {
                     let size = u64::from_str_radix(size, 16)
                         .context("unable to parse entry size")?;
 
+                    // ignore the symbol if it's not a function
                     if !flags.contains('F') {
                         return Ok(None);
                     }
