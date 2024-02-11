@@ -1,0 +1,6 @@
+[submodule "sleigh-sys"]
+	path = sleigh-sys
+	url = ./sleigh-sys
+[submodule "sleigh"]
+	path = sleigh
+	url = .\\sleigh\\
