@@ -1,3 +1,10 @@
+///!
+///! This module contains the `Binary` struct and its associated types and functions.
+///! The `Binary` struct is used to represent a binary file and its associated metadata.
+///! The `Section` struct is used to represent a section within a binary file.
+///! The `Symbol` struct is used to represent a symbol within a binary file.
+///! The `x86_32` function is used to create a `Binary` struct from a given file path.
+
 use std::collections::{LinkedList};
 use std::path::{Path};
 use anyhow::{Context};
