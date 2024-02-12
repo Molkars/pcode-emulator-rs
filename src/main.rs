@@ -30,15 +30,6 @@ fn main() -> anyhow::Result<()> {
                 match control {
                     PcodeControl::Branch(target) => {
                         state.set_address(target);
-                        // if end_address == target {
-                        //     break;
-                        // }
-                        //
-                        // // todo: find end of basic block?
-                        // pcode_group_iter = emulator.pcodes.range(target..);
-                        // let (new_addr, new_vec) = pcode_group_iter.next().expect("no more pcodes!");
-                        // addr = *new_addr;
-                        // pcode_iter = new_vec.iter().enumerate();
                     }
                     PcodeControl::Continue => {}
                 };
