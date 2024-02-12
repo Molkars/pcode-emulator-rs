@@ -12,12 +12,12 @@ a simplistic-ish PCode emulator
 - a binary program ([we'll compile our own](example.c))
     ```console
     $ sudo apt install gcc-multilib
-    $ cc -static -m32 -target i386-pc-linux-gnu your-main.c -o out.bin
+    $ clang -static -m32 -target i386-pc-linux-gnu your-main.c -o out.bin
     ```
 
 ### Usage
 ```console
-$ cargo run -- emulate ./out.bin [...args]
+$ cargo run -- emulate ./out.bin
 ```
 
 ## Reference
