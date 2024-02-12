@@ -1,28 +1,23 @@
-use std::cell::{Ref, RefCell, RefMut};
+use std::cell::{Ref, RefCell};
 use std::collections::{btree_map, BTreeMap};
-use std::env::var;
-use std::mem::MaybeUninit;
-use std::ops::{Add, Deref, Index, IndexMut, Range, Sub};
-use anyhow::{anyhow, bail, Context};
+use std::ops::{Add, Deref, Index, Sub};
+use anyhow::{bail, Context};
 use hashbrown::{HashMap, HashSet};
 use itertools::Itertools;
-use num::{BigInt, BigUint, CheckedSub, ToPrimitive, Zero};
+use num::{BigInt, BigUint, ToPrimitive, Zero};
 use num::bigint::Sign;
-use num::traits::{FromBytes, ToBytes};
 use sleigh::{AddrSpace, Decompiler, Instruction, Opcode, PCode, SpaceType, VarnodeData, X86Mode};
-use sleigh_sys::ffi;
 use crate::binary::{Binary, Section};
-use crate::inspect;
-use crate::symbol_table::SymbolTable;
 
 #[derive(Default, Debug)]
-struct Space {
+pub struct Space {
+    #[allow(unused)]
     big_endian: bool,
     inner: RefCell<BTreeMap<u64, u8>>,
     buffer: RefCell<Vec<u8>>,
 }
 
-enum PcodeControl {
+pub enum PcodeControl {
     Branch(u64),
     Continue,
 }
@@ -37,7 +32,7 @@ impl Space {
     }
 
     pub fn get_bytes(&self, addr: u64, size: u64) -> Ref<[u8]> {
-        let mut inner = self.inner.borrow_mut();
+        let inner = self.inner.borrow_mut();
         let mut buffer = self.buffer.borrow_mut();
         buffer.resize(size as usize, 0u8); // fill the rest with 0
         // let start = addr - addr % self.word_size; // align to word boundary
@@ -59,7 +54,6 @@ impl Space {
     pub fn set_bytes(&self, addr: u64, bytes: &[u8]) {
         let mut inner = self.inner.borrow_mut();
         let start = addr;
-        let end = start + bytes.len() as u64;
         for (i, byte) in bytes.iter().enumerate() {
             inner.insert(start + i as u64, *byte);
         }
@@ -67,23 +61,61 @@ impl Space {
 }
 
 pub struct Emulator<'a> {
-    binary: &'a Binary,
-    decompiler: Decompiler,
+    pub binary: &'a Binary,
+    pub decompiler: Decompiler,
 
-    unique_space: Space,
-    register_space: Space,
-    ram_space: Space,
-    const_space: Space,
+    pub unique_space: Space,
+    pub register_space: Space,
+    pub ram_space: Space,
 
-    sections: HashSet<String>,
-    pcodes: BTreeMap<u64, Vec<PCode>>,
-    instructions: BTreeMap<u64, Instruction>,
-    register_names: HashMap<VarnodeData, String>,
-    named_registers: HashMap<String, VarnodeData>,
+    pub sections: HashSet<String>,
+    pub pcodes: BTreeMap<u64, Vec<PCode>>,
+    pub instructions: BTreeMap<u64, Instruction>,
+    pub register_names: HashMap<VarnodeData, String>,
+    pub named_registers: HashMap<String, VarnodeData>,
+}
+
+pub struct EmulatorState<'a, 'b> {
+    pub emulator: &'a Emulator<'b>,
+    pub address: u64,
+    pub end_address: u64,
+    pcode_group_iter: btree_map::Range<'a, u64, Vec<PCode>>,
+    pcode_iter: std::iter::Enumerate<std::slice::Iter<'a, PCode>>,
+}
+
+impl<'a, 'b> EmulatorState<'a, 'b> {
+    #[inline]
+    pub fn set_address(&mut self, address: u64) {
+        if self.address == self.end_address {
+            return;
+        }
+        self.pcode_group_iter = self.emulator.pcodes.range(address..);
+        let (new_addr, new_vec) = self.pcode_group_iter.next().expect("no more pcodes!");
+        self.address = *new_addr;
+        self.pcode_iter = new_vec.iter().enumerate();
+    }
+}
+
+impl<'a, 'b> Iterator for EmulatorState<'a, 'b> {
+    type Item = (usize, &'a PCode);
+
+    #[inline]
+    fn next(&mut self) -> Option<Self::Item> {
+        let Some((i, pcode)) = self.pcode_iter.next() else {
+            if self.address == self.end_address {
+                return None;
+            }
+            let (new_addr, new_vec) = self.pcode_group_iter.next().expect("no more pcodes!");
+            self.address = *new_addr;
+            self.pcode_iter = new_vec.iter().enumerate();
+            return self.next();
+        };
+        Some((i, pcode))
+    }
 }
 
 impl<'a> Emulator<'a> {
-    fn load_function(&mut self, name: &str) -> anyhow::Result<(u64, u64)> {
+    pub fn load_function(&mut self, name: &str) -> anyhow::Result<(u64, u64)> {
         let symbol = self.binary.symbols
             .get(name)
             .context("unable to find symbol")?;
@@ -125,14 +157,13 @@ impl<'a> Emulator<'a> {
         Ok(section)
     }
 
-    pub fn emulate(binary: &Binary, symbol: &str) -> anyhow::Result<()> {
+    pub fn new(binary: &'a Binary) -> anyhow::Result<Self> {
         let mut emulator = Emulator {
             binary,
             decompiler: Decompiler::builder().x86(X86Mode::Mode32).build(),
             ram_space: Space::new(false),
             register_space: Space::new(false),
             unique_space: Space::new(false),
-            const_space: Space::new(false),
             sections: HashSet::new(),
             pcodes: BTreeMap::default(),
             instructions: BTreeMap::default(),
@@ -140,8 +171,6 @@ impl<'a> Emulator<'a> {
             named_registers: HashMap::default(),
         };
 
-        let (address, size) = emulator.load_function(symbol)?;
-        let end_address = *emulator.instructions.range(..address + size).next_back().unwrap().0;
         for (name, section) in binary.sections.iter() {
             if section.flags.iter().any(|flag| flag == "SHF_EXECINSTR") {
                 println!("loading section: {}", name);
@@ -155,86 +184,65 @@ impl<'a> Emulator<'a> {
             .map(|(node, name)| (name.clone(), node.clone()))
             .collect();
 
-        const INIT_STACK_SIZE: usize = 0x100_000;
+        Ok(emulator)
+    }
 
-        let ebp = emulator.named_registers.get("EBP")
+    pub fn emulate(&mut self, symbol: &str) -> anyhow::Result<EmulatorState<'_, 'a>> {
+        let (address, size) = self.load_function(symbol)?;
+        let end_address = *self.instructions.range(..address + size).next_back().unwrap().0;
+
+        // todo: if x86
+        let ebp = self.named_registers.get("EBP")
             .expect("unable to find EBP register");
-        emulator.write_uint(ebp, &BigUint::from(INIT_STACK_SIZE as u64));
+        self.write_uint(ebp, &BigUint::from(0u32));
 
-        let esp = emulator.named_registers.get("ESP")
+        let esp = self.named_registers.get("ESP")
             .expect("unable to find ESP register");
-        emulator.write_uint(esp, &BigUint::from(INIT_STACK_SIZE as u64));
+        self.write_uint(esp, &BigUint::from(0x100_000u32));
 
-        let eip = emulator.named_registers.get("EIP")
+        let eip = self.named_registers.get("EIP")
             .expect("unable to find EIP register");
-        emulator.write_uint(eip, &BigUint::from(address));
-
-        // main arguments
-        let ebx = emulator.named_registers.get("EBX")
-            .expect("unable to find EBX register");
+        self.write_uint(eip, &BigUint::from(address));
 
         println!("emulating {} at {:0>8X} with {} bytes", symbol, address, size);
-        let mut pcode_group_iter = emulator.pcodes.range(address..address + size);
-        let (mut addr, mut pcode_iter) = {
-            let (mut addr, mut vec) = pcode_group_iter.next().expect("no pcodes!");
-            let mut pcode_iter = vec.iter().enumerate();
+        let mut pcode_group_iter = self.pcodes.range(address..address + size);
+        let (addr, pcode_iter) = {
+            let (addr, vec) = pcode_group_iter.next().expect("no pcodes!");
+            let pcode_iter = vec.iter().enumerate();
             (*addr, pcode_iter)
         };
-        loop {
-            let Some((i, pcode)) = pcode_iter.next() else {
-                if addr == end_address {
-                    break;
-                }
-                let (new_addr, new_vec) = pcode_group_iter.next().expect("no more pcodes!");
-                addr = *new_addr;
-                pcode_iter = new_vec.iter().enumerate();
-                continue;
-            };
 
-            let instruction = emulator.instructions.get(&pcode.address)
-                .expect("no instruction for pcode");
-            println!("emulating {:0>8X}.{:0>2X} {: <20?} - ({}) {}", pcode.address, i, pcode.opcode, instruction.mnemonic, instruction.body);
-            let control = emulator.emulate_one(pcode)
-                .context("emulation failed")?;
-            println!();
-
-            match control {
-                PcodeControl::Branch(target) => {
-                    // todo: find end of basic block?
-                    pcode_group_iter = emulator.pcodes.range(target..);
-                    let (new_addr, new_vec) = pcode_group_iter.next().expect("no more pcodes!");
-                    addr = *new_addr;
-                    pcode_iter = new_vec.iter().enumerate();
-                }
-                PcodeControl::Continue => {}
-            };
-        }
-
-        Ok(())
+        Ok(EmulatorState {
+            emulator: self,
+            address: addr,
+            end_address,
+            pcode_group_iter,
+            pcode_iter,
+        })
     }
 
     #[inline]
-    fn get_bytes(&self, node: &VarnodeData) -> Ref<[u8]> {
-        let bytes = self.get_space(node)
+    pub fn get_bytes(&self, node: &VarnodeData) -> Ref<[u8]> {
+        let bytes = self.get_varnode_space(node)
             .unwrap()
             .get_bytes(node.offset, node.size.into());
         println!("  read {:X?} from {}", bytes, self.nameof(node));
         bytes
     }
 
-    fn set_bytes(&self, node: &VarnodeData, bytes: &[u8]) {
+    pub fn set_bytes(&self, node: &VarnodeData, bytes: &[u8]) {
         if matches!(node.space.type_, SpaceType::Constant) {
             panic!("cannot write to constant space");
         }
         println!("  wrote {:X?} to {}", bytes, self.nameof(node));
-        self.get_space(node)
+        self.get_varnode_space(node)
             .unwrap()
             .set_bytes(node.offset, bytes);
     }
 
     #[inline]
-    fn write_int(&self, node: &VarnodeData, value: &BigInt) {
-        println!("  wrote {:X?} to {}", value, self.nameof(node));
+    pub fn write_int(&self, node: &VarnodeData, value: &BigInt) {
+        println!("  wrote {:X} to {}", value, self.nameof(node));
         let mut bytes = vec![0; node.size as usize];
         if node.space.is_big_endian {
             to_int_of_size_be(value, bytes.as_mut());
@@ -245,8 +253,8 @@ impl<'a> Emulator<'a> {
     }
 
     #[inline]
-    fn write_uint(&self, node: &VarnodeData, value: &BigUint) {
-        println!("  wrote {:X?} to {}", value, self.nameof(node));
+    pub fn write_uint(&self, node: &VarnodeData, value: &BigUint) {
+        println!("  wrote {:X} to {}", value, self.nameof(node));
         let mut bytes = vec![0; node.size as usize];
         if node.space.is_big_endian {
             let be = value.to_bytes_be();
@@ -273,23 +281,27 @@ impl<'a> Emulator<'a> {
     }
 
     #[inline]
-    fn get_space(&self, node: &VarnodeData) -> anyhow::Result<&Space> {
-        match node.space.name.as_str() {
+    pub fn get_varnode_space(&self, node: &VarnodeData) -> anyhow::Result<&Space> {
+        self.get_space(&node.space.name)
+    }
+
+    #[inline]
+    pub fn get_space(&self, name: &str) -> anyhow::Result<&Space> {
+        match name {
             "unique" => Ok(&self.unique_space),
             "register" => Ok(&self.register_space),
             "ram" => Ok(&self.ram_space),
-            "const" => Ok(&self.const_space),
-            _ => bail!("unsupported space type: {:?}", node.space.name),
+            _ => bail!("unsupported space type: {:?}", name),
         }
     }
 
-    fn nameof(&self, node: &VarnodeData) -> String {
+    pub fn nameof(&self, node: &VarnodeData) -> String {
         self.register_names.get(node)
             .cloned()
             .unwrap_or_else(|| format!("{}:{:X}+{}", node.space.name, node.offset, node.size))
     }
 
-    fn emulate_one(
+    pub fn emulate_one(
         &self,
         pcode: &PCode,
     ) -> anyhow::Result<PcodeControl> {
@@ -345,10 +357,11 @@ impl<'a> Emulator<'a> {
                 let output = pcode.outvar.as_ref().unwrap();
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
+                assert_eq!(output.size, 1, "output must be 1 byte");
                 let left = self.get_int(input0);
                 let right = self.get_int(input1);
                 let result = left - right;
-                let overflow = result.bits() > input0.size as u64;
+                let overflow = result.bits() > u64::from(input0.size);
                 self.write_bool(output, overflow);
                 PcodeControl::Continue
             }
@@ -417,6 +430,7 @@ impl<'a> Emulator<'a> {
                 let [addr] = pcode.vars.as_slice() else {
                     bail!("expected 1 input");
                 };
+                println!("  branch to {:X}", addr.offset);
                 PcodeControl::Branch(addr.offset)
             }
             Opcode::IntAdd => {
@@ -436,8 +450,10 @@ impl<'a> Emulator<'a> {
                 };
                 let output = pcode.outvar.as_ref().unwrap();
 
-                let offset = input1.offset;
                 let space = self.get_space_from_const(input0)?;
+                let offset = self.get_uint(input1).to_u64()
+                    .expect("offset must fit in u64");
+                let offset = offset * u64::from(space.wordsize); // offset to bytes
                 let varnode = VarnodeData { space, offset, size: output.size };
 
                 let bytes = self.get_uint(&varnode);
@@ -483,11 +499,13 @@ impl<'a> Emulator<'a> {
                 let [input0, input1] = pcode.vars.as_slice() else {
                     bail!("expected 2 inputs");
                 };
-                let condition = self.get_uint(input0);
+                let condition = self.get_uint(input1);
 
                 if condition != BigUint::zero() {
-                    PcodeControl::Branch(input1.offset)
+                    println!("  branch to {:X}", input0.offset);
+                    PcodeControl::Branch(input0.offset)
                 } else {
+                    println!("  fall through");
                     PcodeControl::Continue
                 }
             }
@@ -495,10 +513,11 @@ impl<'a> Emulator<'a> {
                 let [input0, _values @ ..] = pcode.vars.as_slice() else {
                     bail!("expected at least 1 input");
                 };
-                let offset = self.get_uint(input0).to_u64()
-                    .expect("return value must fit in u64");
-                println!("  input0 contained the value: {:0>8X}", offset);
-                todo!("interpret return value");
+                let off = self.get_uint(input0)
+                    .to_u64()
+                    .expect("offset must fit in u64");
+                println!("  return to {:X}", off);
+                PcodeControl::Branch(off)
             }
             Opcode::IntXor => {
                 let [input0, input1] = pcode.vars.as_slice() else {
@@ -513,6 +532,40 @@ impl<'a> Emulator<'a> {
                 self.write_uint(output, &result);
                 PcodeControl::Continue
             }
+            Opcode::IntZExt => {
+                let [input0] = pcode.vars.as_slice() else {
+                    bail!("expected 1 input");
+                };
+                let output = pcode.outvar.as_ref().unwrap();
+
+                let value = self.get_uint(input0);
+                self.write_uint(output, &value);
+                PcodeControl::Continue
+            }
+            Opcode::BoolOr => {
+                let [input0, input1] = pcode.vars.as_slice() else {
+                    bail!("expected 2 inputs");
+                };
+                let output = pcode.outvar.as_ref().unwrap();
+
+                let left = self.get_bool(input0);
+                let right = self.get_bool(input1);
+                let result = left | right;
+                self.write_bool(output, result);
+                PcodeControl::Continue
+            }
+            Opcode::BoolXor => {
+                let [input0, input1] = pcode.vars.as_slice() else {
+                    bail!("expected 2 inputs");
+                };
+                let output = pcode.outvar.as_ref().unwrap();
+
+                let left = self.get_bool(input0);
+                let right = self.get_bool(input1);
+                let result = left ^ right;
+                self.write_bool(output, result);
+                PcodeControl::Continue
+            }
             _ => bail!("unimplemented opcode: {:?}", pcode.opcode),
         };
 
@@ -520,39 +573,48 @@ impl<'a> Emulator<'a> {
     }
 
     #[inline]
-    fn get_int(&self, varnode: &VarnodeData) -> BigInt {
+    pub fn get_int(&self, varnode: &VarnodeData) -> BigInt {
         if matches!(varnode.space.type_, SpaceType::Constant) {
             println!("  read constant: {:X}", varnode.offset);
             return BigInt::from(varnode.offset);
         }
         let bytes = self.get_bytes(varnode);
-        if varnode.space.is_big_endian {
+        let value = if varnode.space.is_big_endian {
             BigInt::from_signed_bytes_be(bytes.deref())
         } else {
             BigInt::from_signed_bytes_le(bytes.deref())
-        }
+        };
+        println!("  read {:X} from {}", value, self.nameof(varnode));
+        value
     }
 
     #[inline]
-    fn get_uint(&self, varnode: &VarnodeData) -> BigUint {
+    pub fn get_uint(&self, varnode: &VarnodeData) -> BigUint {
         if matches!(varnode.space.type_, SpaceType::Constant) {
             println!("  read constant: {:X}", varnode.offset);
             return BigUint::from(varnode.offset);
         }
         let bytes = self.get_bytes(varnode);
-        if varnode.space.is_big_endian {
+        let value = if varnode.space.is_big_endian {
             BigUint::from_bytes_be(bytes.deref())
         } else {
             BigUint::from_bytes_le(bytes.deref())
-        }
+        };
+        println!("  read {:X} from {}", value, self.nameof(varnode));
+        value
     }
 
     #[inline]
-    fn write_bool(&self, node: &VarnodeData, value: bool) {
+    pub fn get_bool(&self, node: &VarnodeData) -> bool {
+        !self.get_uint(node).is_zero()
+    }
+
+    #[inline]
+    pub fn write_bool(&self, node: &VarnodeData, value: bool) {
         self.write_uint(node, &BigUint::from(value))
     }
 
-    fn get_space_from_const(&self, node: &VarnodeData) -> anyhow::Result<AddrSpace> {
+    pub fn get_space_from_const(&self, node: &VarnodeData) -> anyhow::Result<AddrSpace> {
         if node.space.type_ != SpaceType::Constant {
             bail!("expected constant space");
         }
@@ -564,21 +626,6 @@ impl<'a> Emulator<'a> {
                 .context("unable to get space")?
         };
         Ok(sleigh::AddrSpace::from(space))
-    }
-}
-
-struct Slice<'a> {
-    bytes: &'a [u8],
-    offset: usize,
-    size: usize,
-}
-
-#[inline]
-fn ensure_capacity(dest: &mut Vec<u8>, cap: usize) {
-    let start = dest.capacity();
-    if cap > start {
-        dest.reserve_exact(cap);
-        dest.extend(std::iter::repeat(0).take(cap - start));
     }
 }
 

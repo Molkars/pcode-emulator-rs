@@ -15,5 +15,5 @@ pub enum Command {
         binary: PathBuf,
         #[arg(trailing_var_arg=true, allow_hyphen_values=true)]
         args: Vec<String>
-    }
+    },
 }

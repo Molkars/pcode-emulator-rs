@@ -16,6 +16,7 @@ pub fn read_file_as_bytes(path: impl AsRef<Path>) -> io::Result<Vec<u8>> {
 }
 
 #[inline]
+#[allow(unused)]
 pub fn write_to_file(path: impl AsRef<Path>, f: impl FnOnce(&mut BufWriter<File>) -> io::Result<()>) -> io::Result<()> {
     let file = File::create(path)?;
     let mut writer = BufWriter::new(file);

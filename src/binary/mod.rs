@@ -1,15 +1,8 @@
-use std::collections::{BTreeMap, LinkedList};
-use std::rc::Rc;
+use std::collections::{LinkedList};
 use std::path::{Path};
-use std::process::{Command, exit};
-use std::str::FromStr;
-use anyhow::{anyhow, bail, Context};
+use anyhow::{Context};
 use hashbrown::HashMap;
-use sleigh::{Decompiler, Instruction, PCode, VarnodeData, X86Mode};
-use crate::symbol_table::SymbolInfo;
-use crate::util::{self, ExecUtil};
-use std::io::Write;
-use std::ops::Index;
+use crate::util;
 
 mod readobj;
 
