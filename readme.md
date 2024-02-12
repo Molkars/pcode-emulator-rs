@@ -7,8 +7,8 @@ a simplistic-ish PCode emulator
 
 ### Prerequisites
 - [cargo (via rustup)](https://rustup.rs)
-- a generic c-compiler: `cc`
-- [objdump](https://man7.org/linux/man-pages/man1/objdump.1.html) & [nm](https://man7.org/linux/man-pages/man1/nm.1.html) on the current user's `PATH`
+- the llvm compiler: clang v. 16.0.0 or later
+- [llvm-objdump](https://llvm.org/docs/CommandGuide/llvm-objdump.html)
 - a binary program ([we'll compile our own](example.c))
     ```console
     $ sudo apt install gcc-multilib
