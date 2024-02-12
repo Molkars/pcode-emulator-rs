@@ -1,0 +1,26 @@
+[package]
+name = "sleigh-sys"
+version = "0.1.0"
+edition = "2021"
+authors = ["black-binary <blackbinary@qq.com>"]
+license = "Apache-2.0"
+description = "Rust bindings for Ghidra's Sleigh decompiler"
+keywords = ["disassemble", "binary-analysis"]
+repository = "https://github.com/black-binary/sleigh-sys/"
+
+[dependencies]
+cxx = "1.0"
+num = "0.4"
+num-derive = "0.3"
+num-traits = "0.2"
+lazy_static = "1.4"
+serde = { version = "1.0.195", optional = true }
+serde_derive = { version = "1.0.195", optional = true }
+
+[build-dependencies]
+cc = { version = "1.0", features = ["parallel"] }
+cxx-build = "1.0"
+
+[features]
+default = []
+serde = ["dep:serde", "dep:serde_derive"]

@@ -1,0 +1,28 @@
+[package]
+name = "sleigh"
+version = "0.1.0"
+edition = "2021"
+authors = ["black-binary <blackbinary@qq.com>"]
+license = "Apache-2.0"
+description = "A SLEIGH decompiler"
+keywords = ["disassemble", "binary-analysis"]
+repository = "https://github.com/black-binary/sleigh/"
+
+[dependencies]
+sleigh-sys = { path = "../sleigh-sys" }
+#sleigh-sys = { git="https://github.com/Molkars/sleigh-sys" }
+cxx = "1.0"
+lzma-rs = "0.2"
+lazy_static = "1.4"
+serde = { version = "1.0.195", optional = true }
+serde_derive = { version = "1.0.195", optional = true }
+hashbrown = "*"
+
+[features]
+default = []
+serde = [
+    "dep:serde",
+    "dep:serde_derive",
+    "sleigh-sys/serde",
+    "hashbrown/serde"
+]
