@@ -400,7 +400,6 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "serde_value",
  "sleigh",
  "sleigh-sys",
 ]
@@ -463,14 +462,6 @@ checksum = "176e46fa42316f18edd598015a5166857fc835ec732f5215eac6b7bdbf0a84f4"
 dependencies = [
  "itoa",
  "ryu",
- "serde",
-]
-
-[[package]]
-name = "serde_value"
-version = "0.1.0"
-source = "git+https://github.com/Molkars/serde_value#c9909d8b2bd695a50810c706b737fbb4aade0b60"
-dependencies = [
  "serde",
 ]
 

@@ -10,7 +10,8 @@ clang -static -m32 -target i386-pc-linux-gnu -o "./tests/$name/bin" "./tests/$na
     echo "Compilation failed"
     exit 1
 }
-llvm-objdump --x86-asm-syntax=intel -d "./tests/$name/bin" > "./tests/$name/objdump.txt" || {
+
+objdump -M intel -d "./tests/$name/bin" > "./tests/$name/objdump.txt" || {
     echo "Disassembly failed"
     exit 1
 }

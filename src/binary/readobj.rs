@@ -70,20 +70,6 @@ pub struct Readobj {
     pub symbols: Vec<SymbolItem>,
 }
 
-#[test]
-fn test_readobj() {
-    let content = crate::util::read_file_as_bytes("file.json").unwrap();
-    let content = if content.starts_with(&[0xFF, 0xFE]) {
-        let content: &[u16] = bytemuck::cast_slice(content.index(2..));
-        String::from_utf16(content).unwrap()
-    } else {
-        String::from_utf8(content).unwrap()
-    };
-
-    let content: Vec<Readobj> = serde_json::from_str(content.as_str()).unwrap();
-    println!("{:#?}", content);
-}
-
 pub fn read(path: impl AsRef<Path>) -> anyhow::Result<Readobj> {
     let content = exec("llvm-readobj")
         .arg("--elf-output-style=JSON")

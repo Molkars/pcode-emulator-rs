@@ -14,7 +14,6 @@ serde = "1.0.196"
 serde_derive = "1.0.196"
 sleigh = { path = "sleigh" }
 sleigh-sys = { version = "0.1.0", path = "sleigh-sys" }
-serde_value = { git = "https://github.com/Molkars/serde_value", version = "0.1.0" }
 num = "0.4.1"
 serde_json = "1.0.111"
 
