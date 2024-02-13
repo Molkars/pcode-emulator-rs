@@ -7,8 +7,8 @@ a simplistic-ish PCode emulator
 
 ### Prerequisites
 - [cargo (via rustup)](https://rustup.rs)
-- the llvm compiler: clang v. 17.0.0 or later
-- [llvm-readobj](https://llvm.org/docs/CommandGuide/llvm-readobj.html)
+- the llvm compiler: clang v. 14+
+- [llvm-readobj](https://llvm.org/docs/CommandGuide/llvm-readobj.html) (version 17 required)
 - a x86-32 binary executable
 
 ### Usage
