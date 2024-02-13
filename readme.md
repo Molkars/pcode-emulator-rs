@@ -9,6 +9,9 @@ a simplistic-ish PCode emulator
 - [cargo (via rustup)](https://rustup.rs)
 - the llvm compiler: clang v. 14+
 - [llvm-readobj](https://llvm.org/docs/CommandGuide/llvm-readobj.html) (version 17.x.x required)
+  - mac: `brew install llvm`
+  - linux: https://apt.llvm.org/
+  - windows: https://github.com/llvm/llvm-project/releases/latest
 - a x86-32 binary executable
 
 ### Usage
