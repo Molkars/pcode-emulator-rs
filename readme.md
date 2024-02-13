@@ -16,7 +16,10 @@ a simplistic-ish PCode emulator
 
 ### Usage
 ```console
-$ cargo run -- emulate ./out.bin
+$ llvm-readobj --version
+LLVM Version 17.0.6
+    Optimized build.
+$ cargo run -- emulate ./tests/fib/bin
 ```
 
 ## References
