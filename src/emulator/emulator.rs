@@ -5,10 +5,9 @@ use std::ops::Deref;
 use anyhow::{bail, Context};
 use hashbrown::Equivalent;
 use itertools::Itertools;
-use num::{BigInt, BigUint, ToPrimitive, Zero};
-use num::bigint::Sign;
+use num::{BigInt, BigUint, Zero};
 use sleigh::{AddrSpace, Opcode, PCode, SpaceType, VarnodeData};
-use crate::emulator::{Machine, Space};
+use crate::emulator::{Machine, Space, space};
 
 
 /// A control structure for the emulator
@@ -17,11 +16,6 @@ pub enum PCodeControl {
     Branch(u64),
     /// continue to the next pcode instruction
     Continue,
-}
-
-// todo: actually use this for generic read/write functions
-pub trait IntoBytes {
-    fn into_bytes(self, is_big_endian: bool, out: &mut [u8]);
 }
 
 pub struct Emulator<'a, 'b> {
@@ -115,86 +109,24 @@ impl<'a, 'b> Emulator<'a, 'b> {
             .set_bytes(node.offset, bytes);
     }
 
-    #[inline]
-    pub fn write_int(&self, node: &VarnodeData, value: &BigInt) {
-        println!("  wrote {:X} to {}", value, self.nameof(node));
-        let mut bytes = vec![0; node.size as usize];
-        if node.space.is_big_endian {
-            to_int_of_size_be(value, bytes.as_mut());
-        } else {
-            to_int_of_size_le(value, bytes.as_mut());
-        }
-        self.set_bytes(node, &bytes);
-    }
-
-    #[inline]
-    pub fn get_int(&self, varnode: &VarnodeData) -> BigInt {
-        if matches!(varnode.space.type_, SpaceType::Constant) {
-            println!("  read constant: {:X}", varnode.offset);
-            return BigInt::from(varnode.offset);
-        }
-        let bytes = self.get_bytes(varnode);
-        let value = if varnode.space.is_big_endian {
-            BigInt::from_signed_bytes_be(bytes.deref())
-        } else {
-            BigInt::from_signed_bytes_le(bytes.deref())
-        };
-        println!("  read {:X} from {}", value, self.nameof(varnode));
-        value
-    }
-
-    #[inline]
-    pub fn write_uint(&self, node: &VarnodeData, value: &BigUint) {
-        println!("  wrote {:X} to {}", value, self.nameof(node));
-        let mut bytes = vec![0; node.size as usize];
-        if node.space.is_big_endian {
-            let be = value.to_bytes_be();
-            if be.len() > bytes.len() {
-                let split = be.len() - bytes.len();
-                bytes.copy_from_slice(&be[split..]);
+    pub fn read<T: space::Read>(&self, node: &VarnodeData) -> T {
+        if matches!(node.space.type_, SpaceType::Constant) {
+            let bytes = if node.space.is_big_endian {
+                node.offset.to_be_bytes()
             } else {
-                let split = bytes.len() - be.len();
-                bytes[split..].copy_from_slice(&be);
-                bytes[..split].fill(0);
-            }
+                node.offset.to_le_bytes()
+            };
+            T::read(node.space.is_big_endian, &bytes)
         } else {
-            let le = value.to_bytes_le();
-            if le.len() > bytes.len() {
-                let split = bytes.len();
-                bytes.copy_from_slice(&le[..split]);
-            } else {
-                let split = le.len();
-                bytes[..split].copy_from_slice(&le);
-                bytes[split..].fill(0);
-            }
+            T::read(node.space.is_big_endian, self.get_bytes(node).deref())
         }
+    }
+
+    #[inline]
+    pub fn write<T: space::Write>(&self, node: &VarnodeData, value: T) {
+        let mut bytes = vec![0; node.size as usize];
+        value.write(node.space.is_big_endian, &mut bytes);
         self.set_bytes(node, &bytes);
-    }
-
-    #[inline]
-    pub fn get_uint(&self, varnode: &VarnodeData) -> BigUint {
-        if matches!(varnode.space.type_, SpaceType::Constant) {
-            println!("  read constant: {:X}", varnode.offset);
-            return BigUint::from(varnode.offset);
-        }
-        let bytes = self.get_bytes(varnode);
-        let value = if varnode.space.is_big_endian {
-            BigUint::from_bytes_be(bytes.deref())
-        } else {
-            BigUint::from_bytes_le(bytes.deref())
-        };
-        println!("  read {:X} from {}", value, self.nameof(varnode));
-        value
-    }
-
-    #[inline]
-    pub fn write_bool(&self, node: &VarnodeData, value: bool) {
-        self.write_uint(node, &BigUint::from(value))
-    }
-
-    #[inline]
-    pub fn get_bool(&self, node: &VarnodeData) -> bool {
-        !self.get_uint(node).is_zero()
     }
 
     pub fn get_space_from_const(&self, node: &VarnodeData) -> anyhow::Result<AddrSpace> {
@@ -248,8 +180,8 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, output.size, "input and output must have the same size");
-                let value = self.get_uint(input0);
-                self.write_uint(output, &value);
+                let value: BigUint = self.read(input0);
+                self.write(output, value);
 
                 PCodeControl::Continue
             }
@@ -261,10 +193,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
-                let left = self.get_int(input0);
-                let right = self.get_int(input1);
+                let left: BigInt = self.read(input0);
+                let right: BigInt = self.read(input1);
                 let result = left - right;
-                self.write_int(output, &result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::Store => {
@@ -273,13 +205,12 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 };
 
                 let space = self.get_space_from_const(input0)?;
-                let offset = self.get_uint(input1).to_u64()
-                    .context("offset must fit in u64")?;
+                let offset: u64 = self.read(input1);
                 let offset = offset * u64::from(space.wordsize); // offset to bytes
-                let value = self.get_uint(input2);
+                let value: BigUint = self.read(input2);
 
                 let varnode = VarnodeData { space, offset, size: input2.size };
-                self.write_uint(&varnode, &value);
+                self.write(&varnode, value);
 
                 PCodeControl::Continue
             }
@@ -293,11 +224,11 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
                 assert_eq!(output.size, 1, "output must be 1 byte");
 
-                let left = self.get_int(input0);
-                let right = self.get_int(input1);
-                let result = &left - &right;
+                let left: BigInt = self.read(input0);
+                let right: BigInt = self.read(input1);
+                let result = left - right;
                 let overflow = result.bits() > u64::from(input0.size);
-                self.write_bool(output, overflow);
+                self.write(output, overflow);
                 PCodeControl::Continue
             }
             Opcode::IntLess => {
@@ -309,9 +240,9 @@ impl<'a, 'b> Emulator<'a, 'b> {
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
 
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
-                self.write_bool(output, left < right);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
+                self.write(output, left < right);
                 PCodeControl::Continue
             }
             Opcode::IntSLess => {
@@ -322,9 +253,9 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
-                let left = self.get_int(input0);
-                let right = self.get_int(input1);
-                self.write_bool(output, left < right);
+                let left: BigInt = self.read(input0);
+                let right: BigInt = self.read(input1);
+                self.write(output, left < right);
                 PCodeControl::Continue
             }
             Opcode::IntEqual => {
@@ -337,10 +268,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
                 assert_eq!(output.size, 1, "output must be 1 byte");
 
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
                 let result = left == right;
-                self.write_bool(output, result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::IntAnd => {
@@ -351,10 +282,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
                 let result = &left & &right;
-                self.write_uint(output, &result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::PopCount => {
@@ -364,9 +295,9 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let value = self.get_uint(input0);
+                let value: BigUint = self.read(input0);
                 let result = value.count_ones();
-                self.write_uint(output, &BigUint::from(result));
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::Branch => {
@@ -383,10 +314,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let left = self.get_int(input0);
-                let right = self.get_int(input1);
+                let left: BigInt = self.read(input0);
+                let right: BigInt = self.read(input1);
                 let result = &left + &right;
-                self.write_int(output, &result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::Load => {
@@ -397,13 +328,12 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 let space = self.get_space_from_const(input0)?;
-                let offset = self.get_uint(input1).to_u64()
-                    .context("offset must fit in u64")?;
+                let offset: u64 = self.read(input1);
                 let offset = offset * u64::from(space.wordsize); // offset to bytes
                 let varnode = VarnodeData { space, offset, size: output.size };
 
-                let bytes = self.get_uint(&varnode);
-                self.write_uint(output, &bytes);
+                let bytes: BigUint = self.read(&varnode);
+                self.write(output, bytes);
 
                 PCodeControl::Continue
             }
@@ -422,11 +352,11 @@ impl<'a, 'b> Emulator<'a, 'b> {
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
 
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
                 let result = &left + &right;
                 let carry = result.bits() > input0.size as u64;
-                self.write_bool(output, carry);
+                self.write(output, carry);
                 PCodeControl::Continue
             }
             Opcode::IntSCarry => {
@@ -438,11 +368,11 @@ impl<'a, 'b> Emulator<'a, 'b> {
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
 
-                let left = self.get_int(input0);
-                let right = self.get_int(input1);
+                let left: BigInt = self.read(input0);
+                let right: BigInt = self.read(input1);
                 let result = &left + &right;
                 let carry = result.bits() > input0.size as u64;
-                self.write_bool(output, carry);
+                self.write(output, carry);
                 PCodeControl::Continue
             }
             Opcode::CBranch => {
@@ -450,7 +380,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     bail!("expected 2 inputs");
                 };
 
-                let condition = self.get_uint(input1);
+                let condition: BigUint = self.read(input1);
                 if condition != BigUint::zero() {
                     println!("  branch to {:X}", input0.offset);
                     PCodeControl::Branch(input0.offset)
@@ -463,9 +393,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let [input0, _values @ ..] = pcode.vars.as_slice() else {
                     bail!("expected at least 1 input");
                 };
-                let off = self.get_uint(input0)
-                    .to_u64()
-                    .context("offset must fit in u64")?;
+                let off: u64 = self.read(input0);
                 println!("  return to {:X}", off);
                 PCodeControl::Branch(off)
             }
@@ -477,10 +405,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
                 let result = &left ^ &right;
-                self.write_uint(output, &result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::IntOr => {
@@ -491,10 +419,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     .context("expected output")?;
 
                 assert_eq!(input0.size, input1.size, "inputs must have be the same size");
-                let left = self.get_uint(input0);
-                let right = self.get_uint(input1);
+                let left: BigUint = self.read(input0);
+                let right: BigUint = self.read(input1);
                 let result = &left | &right;
-                self.write_uint(output, &result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::IntZExt => {
@@ -504,8 +432,8 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let value = self.get_uint(input0);
-                self.write_uint(output, &value);
+                let value: BigUint = self.read(input0);
+                self.write(output, value);
                 PCodeControl::Continue
             }
             Opcode::BoolOr => {
@@ -515,10 +443,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let left = self.get_bool(input0);
-                let right = self.get_bool(input1);
+                let left: bool = self.read(input0);
+                let right: bool = self.read(input1);
                 let result = left | right;
-                self.write_bool(output, result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::BoolXor => {
@@ -528,10 +456,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let left = self.get_bool(input0);
-                let right = self.get_bool(input1);
+                let left: bool = self.read(input0);
+                let right: bool = self.read(input1);
                 let result = left ^ right;
-                self.write_bool(output, result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::BoolNegate => {
@@ -541,9 +469,9 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let value = self.get_bool(input0);
+                let value: bool = self.read(input0);
                 let result = !&value;
-                self.write_bool(output, result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             Opcode::BoolAnd => {
@@ -553,54 +481,15 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let output = pcode.outvar.as_ref()
                     .context("expected output")?;
 
-                let left = self.get_bool(input0);
-                let right = self.get_bool(input1);
+                let left: bool = self.read(input0);
+                let right: bool = self.read(input1);
                 let result = left & right;
-                self.write_bool(output, result);
+                self.write(output, result);
                 PCodeControl::Continue
             }
             _ => bail!("unimplemented opcode: {:?}", pcode.opcode),
         };
 
         Ok(control)
-    }
-}
-
-
-#[inline]
-fn to_int_of_size_le(val: &BigInt, out: &mut [u8]) {
-    let (sign, bytes) = val.to_bytes_le();
-    if bytes.len() > out.len() {
-        out.copy_from_slice(&bytes[..out.len()]);
-    } else {
-        let split = bytes.len();
-        out[..split].copy_from_slice(&bytes);
-        out[split..].fill(0);
-        if matches!(sign, Sign::Minus) {
-            for byte in out.iter_mut() {
-                *byte = !*byte;
-            }
-            out[0] = out[0].overflowing_add(1).0;
-        }
-    }
-}
-
-#[inline]
-fn to_int_of_size_be(val: &BigInt, out: &mut [u8]) {
-    let (sign, bytes) = val.to_bytes_be();
-    if val.bits() as usize >= out.len() * 8 {
-        let split = bytes.len() - out.len();
-        out.copy_from_slice(&bytes[split..]);
-    } else {
-        let split = out.len() - bytes.len();
-        out[split..].copy_from_slice(&bytes);
-        out[..split].fill(0);
-        if matches!(sign, Sign::Minus) {
-            for byte in out.iter_mut() {
-                *byte = !*byte;
-            }
-            let last = out.len() - 1;
-            out[last] = out[last].overflowing_add(1).0;
-        }
     }
 }

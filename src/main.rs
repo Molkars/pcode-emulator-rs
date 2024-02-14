@@ -8,7 +8,11 @@ use crate::cli::{CLI, Command};
 mod util;
 mod cli;
 
-fn main() -> anyhow::Result<()> {
+fn main() {
+    run().unwrap()
+}
+
+fn run() -> anyhow::Result<()> {
     let args = <CLI as clap::Parser>::parse();
     match args.command {
         Command::Emulate { binary, .. } => {
@@ -36,7 +40,7 @@ fn main() -> anyhow::Result<()> {
 
             println!("-=- Done -=-");
             let eax = emulator.emulator.named_registers.get("EAX").expect("no eax");
-            let value = emulator.get_int(eax);
+            let value = emulator.read::<i32>(eax);
             println!("$eax = {}", value);
         }
     };

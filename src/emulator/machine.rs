@@ -2,7 +2,6 @@ use std::collections::BTreeMap;
 use std::ops::Index;
 use anyhow::{bail, Context};
 use hashbrown::{HashMap, HashSet};
-use num::{BigUint};
 use sleigh::{Decompiler, Instruction, PCode, VarnodeData, X86Mode};
 use crate::binary::{Binary, Section};
 use crate::emulator::{Emulator};
@@ -99,15 +98,15 @@ impl<'a> Machine<'a> {
         // todo: support more architectures
         let ebp = emulator.get_register("EBP")
             .expect("unable to find EBP register");
-        emulator.write_uint(ebp, &BigUint::from(0u32));
+        emulator.write(ebp, 0u32);
 
         let esp = emulator.get_register("ESP")
             .expect("unable to find ESP register");
-        emulator.write_uint(esp, &BigUint::from(0x100_000u32));
+        emulator.write(esp, 0x100_000u32);
 
         let eip = emulator.get_register("EIP")
             .expect("unable to find EIP register");
-        emulator.write_uint(eip, &BigUint::from(emulator.address));
+        emulator.write(eip, u32::try_from(emulator.address).unwrap());
 
         Ok(emulator)
     }
