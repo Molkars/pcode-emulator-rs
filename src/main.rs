@@ -8,6 +8,9 @@ use crate::cli::{CLI, Command};
 mod util;
 mod cli;
 
+#[cfg(feature = "ui")]
+mod ui;
+
 fn main() {
     run().unwrap()
 }
@@ -42,6 +45,10 @@ fn run() -> anyhow::Result<()> {
             let eax = emulator.emulator.named_registers.get("EAX").expect("no eax");
             let value = emulator.read::<i32>(eax);
             println!("$eax = {}", value);
+        }
+        Command::Debug { binary } => {
+            let binary = Binary::x86_32(binary)?;
+            ui::run(binary);
         }
     };
 

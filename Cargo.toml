@@ -16,6 +16,11 @@ sleigh = { path = "sleigh" }
 sleigh-sys = { version = "0.1.0", path = "sleigh-sys" }
 num = "0.4.1"
 serde_json = "1.0.111"
+iced = { version = "0.10.0", optional = true }
 
 [workspace]
 members = ["sleigh", "sleigh-sys"]
+
+[features]
+ui = ["iced"]
+default = ["ui"]

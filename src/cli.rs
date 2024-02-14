@@ -16,4 +16,8 @@ pub enum Command {
         #[arg(trailing_var_arg=true, allow_hyphen_values=true)]
         args: Vec<String>
     },
+    Debug {
+        /// the path to the binary
+        binary: PathBuf,
+    }
 }
