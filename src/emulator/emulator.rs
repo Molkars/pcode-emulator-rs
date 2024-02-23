@@ -2,6 +2,7 @@ use std::hash::Hash;
 use std::ops::Deref;
 use anyhow::{bail, Context};
 use hashbrown::{Equivalent, HashMap};
+use itertools::Itertools;
 use num::{BigInt, BigUint, Zero};
 use sleigh::{AddrSpace, Opcode, PCode, SpaceType, VarnodeData};
 use crate::emulator::{Space, space};
@@ -11,7 +12,7 @@ macro_rules! log {
         println!();
     };
     ($($t:tt)+) => {
-            // println!("[{}:{}] {}", file!(), line!(), std::format_args!($($t)*));
+        println!($($t)+);
     };
 }
 
@@ -114,7 +115,9 @@ impl Emulator {
             space.as_ref()
                 .context("unable to get space")?
         };
-        Ok(sleigh::AddrSpace::from(space))
+        let out = sleigh::AddrSpace::from(space);
+        log!("  resolved {} to the {:?} space", self.nameof(node), out.name);
+        Ok(out)
     }
 
     #[inline]

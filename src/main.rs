@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-use anyhow::{anyhow, Context};
+use anyhow::{Context};
 use pcode::binary::Binary;
 use pcode::emulator::{Machine, PCodeControl};
 use crate::cli::{CLI, Command};
