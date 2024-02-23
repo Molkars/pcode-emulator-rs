@@ -1,4 +1,4 @@
-use std::cell::{Ref, RefCell};
+use std::cell::{RefCell};
 use std::collections::BTreeMap;
 use num::{BigInt, BigUint, Zero};
 use num::bigint::Sign;
@@ -10,8 +10,6 @@ pub struct Space {
     big_endian: bool,
     /// a map of address to byte
     inner: RefCell<BTreeMap<u64, u8>>,
-    /// an owned buffer to use as temporary storage for get_out
-    buffer: RefCell<Vec<u8>>,
 }
 
 impl Space {
@@ -19,30 +17,20 @@ impl Space {
         Self {
             big_endian,
             inner: RefCell::default(),
-            buffer: RefCell::new(vec![0; 4]),
         }
     }
 
-    pub fn get_bytes(&self, addr: u64, size: u64) -> Ref<[u8]> {
+    pub fn get_bytes(&self, addr: u64, size: u64) -> Vec<u8> {
         let inner = self.inner.borrow_mut();
-        let mut buffer = self.buffer.borrow_mut();
-        buffer.resize(size as usize, 0u8); // fill the rest with 0
 
         let start = addr;
         let end = start + size;
-        let mut last_key = start;
+        let mut out = vec![0; size as usize];
         // fill the buffer with the bytes from the map, we manually fill the gaps with 0
         for (key, value) in inner.range(start..end) {
-            buffer[0..(key - last_key) as usize].fill(0u8);
-            buffer[(key - start) as usize] = *value;
-            last_key = key + 1;
+            out[(key - start) as usize] = *value;
         }
-        buffer.resize(size as usize, 0u8); // fill the rest with 0
-        // fill the rest of the buffer with 0
-        buffer[(last_key - start) as usize..size as usize].fill(0u8);
-        drop(buffer);
-
-        Ref::map(self.buffer.borrow(), |vec| &vec[..size as usize])
+        return out;
     }
 
     pub fn set_bytes(&self, addr: u64, bytes: &[u8]) {
@@ -175,11 +163,11 @@ impl Read for bool {
 }
 
 macro_rules! primitive {
-    ($($n:ty),+) => {
+    ($t:ty; $($n:ty),+) => {
         $(
         impl Read for $n {
             fn read(is_big_endian: bool, src: &[u8]) -> Self {
-                BigInt::read(is_big_endian, src)
+                <$t as Read>::read(is_big_endian, src)
                 .try_into()
                 .expect("unable to convert to primitive")
             }
@@ -187,11 +175,12 @@ macro_rules! primitive {
 
         impl Write for $n {
             fn write(self, is_big_endian: bool, dest: &mut [u8]) {
-                BigInt::from(self).write(is_big_endian, dest)
+                <$t>::from(self).write(is_big_endian, dest)
             }
         }
         )+
     };
 }
 
-primitive!(u8, u16, u32, u64, u128, i8, i16, i32, i64, i128);
+primitive!(BigUint; u8, u16, u32, u64, u128);
+primitive!(BigInt; i8, i16, i32, i64, i128);

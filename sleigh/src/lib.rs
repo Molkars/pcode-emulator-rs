@@ -68,7 +68,7 @@ pub struct PCode {
     pub outvar: Option<VarnodeData>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde_derive::Serialize))]
 pub struct Instruction {
     pub address: u64,
@@ -335,6 +335,8 @@ pub struct Decompiler {
     rust_loader: *mut RustLoadImage<'static>,
     inner: UniquePtr<sleigh_sys::ffi::Decompiler>,
 }
+
+unsafe impl Send for Decompiler {}
 
 impl Drop for Decompiler {
     fn drop(&mut self) {

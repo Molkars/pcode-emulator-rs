@@ -1,14 +1,19 @@
-use std::cell::Ref;
-use std::collections::btree_map;
 use std::hash::Hash;
 use std::ops::Deref;
 use anyhow::{bail, Context};
-use hashbrown::Equivalent;
-use itertools::Itertools;
+use hashbrown::{Equivalent, HashMap};
 use num::{BigInt, BigUint, Zero};
 use sleigh::{AddrSpace, Opcode, PCode, SpaceType, VarnodeData};
-use crate::emulator::{Machine, Space, space};
+use crate::emulator::{Space, space};
 
+macro_rules! log {
+    () => {
+        println!();
+    };
+    ($($t:tt)+) => {
+            // println!("[{}:{}] {}", file!(), line!(), std::format_args!($($t)*));
+    };
+}
 
 /// A control structure for the emulator
 pub enum PCodeControl {
@@ -18,48 +23,27 @@ pub enum PCodeControl {
     Continue,
 }
 
-pub struct Emulator<'a, 'b> {
-    /// the emulator
-    pub emulator: &'a Machine<'b>,
-    /// the current instruction address
-    pub address: u64,
-    /// the exit address of the emulator code
-    pub end_address: u64,
-
+pub struct Emulator {
     pub unique_space: Space,
     pub register_space: Space,
     pub ram_space: Space,
-
-    pcode_group_iter: btree_map::Range<'a, u64, Vec<PCode>>,
-    pcode_iter: std::iter::Enumerate<std::slice::Iter<'a, PCode>>,
+    pub register_names: HashMap<VarnodeData, String>,
+    pub named_registers: HashMap<String, VarnodeData>,
 }
 
-impl<'a, 'b> Emulator<'a, 'b> {
-    pub fn new(machine: &'a Machine<'b>, address: u64, end_address: u64) -> Self {
-        let mut pcode_group_iter = machine.pcodes.range(address..);
-        let (new_addr, new_vec) = pcode_group_iter.next().expect("no more pcodes!");
-        let pcode_iter = new_vec.iter().enumerate();
+impl Emulator {
+    pub fn new(register_names: HashMap<VarnodeData, String>) -> Self {
+        let named_registers = register_names
+            .iter()
+            .map(|(k, v)| (v.clone(), k.clone()))
+            .collect();
         Self {
-            emulator: machine,
-            address: *new_addr,
-            end_address,
             unique_space: Space::new(false),
             register_space: Space::new(false),
             ram_space: Space::new(false),
-            pcode_group_iter,
-            pcode_iter,
+            register_names,
+            named_registers,
         }
-    }
-
-    #[inline]
-    pub fn set_address(&mut self, address: u64) {
-        if self.address == self.end_address {
-            return;
-        }
-        self.pcode_group_iter = self.emulator.pcodes.range(address..);
-        let (new_addr, new_vec) = self.pcode_group_iter.next().expect("no more pcodes!");
-        self.address = *new_addr;
-        self.pcode_iter = new_vec.iter().enumerate();
     }
 
     #[inline]
@@ -67,35 +51,25 @@ impl<'a, 'b> Emulator<'a, 'b> {
         where
             Q: Hash + Equivalent<String>,
     {
-        self.emulator.named_registers.get(k)
+        self.named_registers.get(k)
+    }
+
+    #[inline]
+    pub fn get_register_name<Q: ?Sized>(&self, k: &Q) -> Option<&String>
+        where
+            Q: Hash + Equivalent<VarnodeData>,
+    {
+        self.register_names.get(k)
     }
 }
 
-impl<'a, 'b> Iterator for Emulator<'a, 'b> {
-    type Item = (usize, &'a PCode);
-
+impl Emulator {
     #[inline]
-    fn next(&mut self) -> Option<Self::Item> {
-        let Some((i, pcode)) = self.pcode_iter.next() else {
-            if self.address == self.end_address {
-                return None;
-            }
-            let (new_addr, new_vec) = self.pcode_group_iter.next().expect("no more pcodes!");
-            self.address = *new_addr;
-            self.pcode_iter = new_vec.iter().enumerate();
-            return self.next();
-        };
-        Some((i, pcode))
-    }
-}
-
-impl<'a, 'b> Emulator<'a, 'b> {
-    #[inline]
-    pub fn get_bytes(&self, node: &VarnodeData) -> Ref<[u8]> {
+    pub fn get_bytes(&self, node: &VarnodeData) -> Vec<u8> {
         let bytes = self.get_varnode_space(node)
             .expect("sleigh dropped the ball, node doesn't have a space")
             .get_bytes(node.offset, node.size.into());
-        println!("  read {:X?} from {}", bytes, self.nameof(node));
+        log!("  read {:X?} from {}", bytes, self.nameof(node));
         bytes
     }
 
@@ -103,7 +77,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
         if matches!(node.space.type_, SpaceType::Constant) {
             panic!("cannot write to constant space");
         }
-        println!("  wrote {:X?} to {}", bytes, self.nameof(node));
+        log!("  wrote {:X?} to {}", bytes, self.nameof(node));
         self.get_varnode_space(node)
             .unwrap()
             .set_bytes(node.offset, bytes);
@@ -159,7 +133,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
     }
 
     pub fn nameof(&self, node: &VarnodeData) -> String {
-        self.emulator.register_names.get(node)
+        self.register_names.get(node)
             .cloned()
             .unwrap_or_else(|| format!("{}:{:X}+{}", node.space.name, node.offset, node.size))
     }
@@ -168,7 +142,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
         &self,
         pcode: &PCode,
     ) -> anyhow::Result<PCodeControl> {
-        println!("  {:?} : {} -> {}", pcode.opcode,
+        log!("  {:?} : {} -> {}", pcode.opcode,
                  pcode.vars.iter().map(|node| self.nameof(node)).join(", "),
                  pcode.outvar.as_ref().map(|node| self.nameof(node)).unwrap_or("!".to_string()));
         let control = match pcode.opcode {
@@ -304,7 +278,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
                 let [addr] = pcode.vars.as_slice() else {
                     bail!("expected 1 input");
                 };
-                println!("  branch to {:X}", addr.offset);
+                log!("  branch to {:X}", addr.offset);
                 PCodeControl::Branch(addr.offset)
             }
             Opcode::IntAdd => {
@@ -382,10 +356,10 @@ impl<'a, 'b> Emulator<'a, 'b> {
 
                 let condition: BigUint = self.read(input1);
                 if condition != BigUint::zero() {
-                    println!("  branch to {:X}", input0.offset);
+                    log!("  branch to {:X}", input0.offset);
                     PCodeControl::Branch(input0.offset)
                 } else {
-                    println!("  fall through");
+                    log!("  fall through");
                     PCodeControl::Continue
                 }
             }
@@ -394,7 +368,7 @@ impl<'a, 'b> Emulator<'a, 'b> {
                     bail!("expected at least 1 input");
                 };
                 let off: u64 = self.read(input0);
-                println!("  return to {:X}", off);
+                log!("  return to {:X}", off);
                 PCodeControl::Branch(off)
             }
             Opcode::IntXor => {

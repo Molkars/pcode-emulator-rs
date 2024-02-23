@@ -5,4 +5,4 @@ mod machine;
 
 pub use space::Space;
 pub use emulator::{Emulator, PCodeControl};
-pub use machine::Machine;
+pub use machine::{Machine, Cursor};

@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-use anyhow::Context;
+use anyhow::{anyhow, Context};
 use pcode::binary::Binary;
 use pcode::emulator::{Machine, PCodeControl};
 use crate::cli::{CLI, Command};
@@ -22,33 +22,36 @@ fn run() -> anyhow::Result<()> {
             let binary = Binary::x86_32(binary)?;
             let mut machine = Machine::new(&binary)?;
 
-            let mut emulator = machine.emulate("main")?;
+            let (emulator, mut cursor) = machine.emulate(&binary, "main")?;
+
+            let pcode = cursor.next(&machine).unwrap();
 
             println!("-=- Emulating -=-");
-            while let Some((i, pcode)) = emulator.next() {
-                let instruction = emulator.emulator.instructions.get(&pcode.address)
+            while let Some(pcode) = cursor.next(&machine) {
+                let instruction = machine.instructions.get(&pcode.address)
                     .expect("no instruction for pcode");
-                println!("emulating {:0>8X}.{:0>2X} {: <20?} - ({}) {}", pcode.address, i, pcode.opcode, instruction.mnemonic, instruction.body);
-                let control = emulator.emulate_one(pcode)
+                println!("emulating {:0>8X}.{:0>2X} {: <20?} - ({}) {}", pcode.address, cursor.index, pcode.opcode, instruction.mnemonic, instruction.body);
+                let control = emulator.emulate_one(&pcode)
                     .context("emulation failed")?;
                 println!();
 
                 match control {
                     PCodeControl::Branch(target) => {
-                        emulator.set_address(target);
+                        if target != cursor.end_address {
+                            cursor.set_address(target, &machine);
+                        } else {
+                            break;
+                        }
                     }
                     PCodeControl::Continue => {}
                 };
             }
 
             println!("-=- Done -=-");
-            let eax = emulator.emulator.named_registers.get("EAX").expect("no eax");
+            let eax = emulator.get_register("eax")
+                .expect("unable to find eax register");
             let value = emulator.read::<i32>(eax);
             println!("$eax = {}", value);
-        }
-        Command::Debug { binary } => {
-            let binary = Binary::x86_32(binary)?;
-            ui::run(binary);
         }
     };
 
