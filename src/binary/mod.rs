@@ -46,7 +46,7 @@ pub struct Symbol {
 }
 
 impl Binary {
-    pub fn x86_32(path: impl AsRef<Path>) -> anyhow::Result<Self> {
+    pub fn new(path: impl AsRef<Path>) -> anyhow::Result<Self> {
         let path = path.as_ref();
         let bytes = util::read_file_as_bytes(path)?;
 

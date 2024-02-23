@@ -102,7 +102,7 @@ impl<'a> Machine<'a> {
 
         let esp = emulator.get_register("ESP")
             .expect("unable to find ESP register");
-        emulator.write(esp, 0x100_000u32);
+        emulator.write(esp, 0xFFFF_CBB8_u32);
 
         let eip = emulator.get_register("EIP")
             .expect("unable to find EIP register");

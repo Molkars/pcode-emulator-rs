@@ -175,9 +175,24 @@ impl Read for bool {
 }
 
 macro_rules! primitive {
-    ($($n:ty),+) => {
+    ($($n:ty),+; $($n2:ty),+) => {
         $(
         impl Read for $n {
+            fn read(is_big_endian: bool, src: &[u8]) -> Self {
+                BigUint::read(is_big_endian, src)
+                .try_into()
+                .expect("unable to convert to primitive")
+            }
+        }
+
+        impl Write for $n {
+            fn write(self, is_big_endian: bool, dest: &mut [u8]) {
+                BigUint::from(self).write(is_big_endian, dest)
+            }
+        }
+        )+
+        $(
+        impl Read for $n2 {
             fn read(is_big_endian: bool, src: &[u8]) -> Self {
                 BigInt::read(is_big_endian, src)
                 .try_into()
@@ -185,7 +200,7 @@ macro_rules! primitive {
             }
         }
 
-        impl Write for $n {
+        impl Write for $n2 {
             fn write(self, is_big_endian: bool, dest: &mut [u8]) {
                 BigInt::from(self).write(is_big_endian, dest)
             }
@@ -194,4 +209,4 @@ macro_rules! primitive {
     };
 }
 
-primitive!(u8, u16, u32, u64, u128, i8, i16, i32, i64, i128);
+primitive!(u8, u16, u32, u64, u128; i8, i16, i32, i64, i128);

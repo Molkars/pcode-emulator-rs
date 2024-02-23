@@ -140,7 +140,9 @@ impl<'a, 'b> Emulator<'a, 'b> {
             space.as_ref()
                 .context("unable to get space")?
         };
-        Ok(sleigh::AddrSpace::from(space))
+        let out = sleigh::AddrSpace::from(space);
+        println!("  resolved {} to the {:?} space", self.nameof(node), out.name);
+        Ok(out)
     }
 
     #[inline]

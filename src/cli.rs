@@ -1,5 +1,5 @@
 use std::path::PathBuf;
-use clap::{Parser, Subcommand};
+use clap::{Args, Parser, Subcommand, ValueEnum};
 
 #[derive(Parser, Clone)]
 pub struct CLI {
@@ -13,7 +13,5 @@ pub enum Command {
     Emulate {
         /// the path to the binary
         binary: PathBuf,
-        #[arg(trailing_var_arg=true, allow_hyphen_values=true)]
-        args: Vec<String>
     },
 }

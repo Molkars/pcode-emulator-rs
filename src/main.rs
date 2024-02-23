@@ -16,7 +16,7 @@ fn run() -> anyhow::Result<()> {
     let args = <CLI as clap::Parser>::parse();
     match args.command {
         Command::Emulate { binary, .. } => {
-            let binary = Binary::x86_32(binary)?;
+            let binary = Binary::new(binary)?;
             let mut machine = Machine::new(&binary)?;
 
             let mut emulator = machine.emulate("main")?;
