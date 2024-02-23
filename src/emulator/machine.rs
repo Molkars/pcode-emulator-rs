@@ -159,4 +159,8 @@ impl Cursor {
         self.address = address;
         self.index = 0;
     }
+
+    pub fn at_end(&self) -> bool {
+        self.address == self.end_address
+    }
 }

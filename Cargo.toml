@@ -18,7 +18,7 @@ num = "0.4.1"
 serde_json = "1.0.111"
 
 [workspace]
-members = ["sleigh", "sleigh-sys", "ui"]
+members = ["sleigh", "sleigh-sys"]
 
 [features]
 default = []

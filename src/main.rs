@@ -8,9 +8,6 @@ use crate::cli::{CLI, Command};
 mod util;
 mod cli;
 
-#[cfg(feature = "ui")]
-mod ui;
-
 fn main() {
     run().unwrap()
 }
@@ -19,7 +16,7 @@ fn run() -> anyhow::Result<()> {
     let args = <CLI as clap::Parser>::parse();
     match args.command {
         Command::Emulate { binary, .. } => {
-            let binary = Binary::x86_32(binary)?;
+            let binary = Binary::load(binary)?;
             let mut machine = Machine::new(&binary)?;
 
             let (emulator, mut cursor) = machine.emulate(&binary, "main")?;
@@ -37,10 +34,8 @@ fn run() -> anyhow::Result<()> {
 
                 match control {
                     PCodeControl::Branch(target) => {
-                        if target != cursor.end_address {
+                        if !cursor.at_end() {
                             cursor.set_address(target, &machine);
-                        } else {
-                            break;
                         }
                     }
                     PCodeControl::Continue => {}
@@ -48,7 +43,7 @@ fn run() -> anyhow::Result<()> {
             }
 
             println!("-=- Done -=-");
-            let eax = emulator.get_register("eax")
+            let eax = emulator.get_register("EAX")
                 .expect("unable to find eax register");
             let value = emulator.read::<i32>(eax);
             println!("$eax = {}", value);
