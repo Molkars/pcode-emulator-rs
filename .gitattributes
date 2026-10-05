@@ -1,2 +1,2 @@
-/sleigh linguist-language=linguist-vendored
-/sleigh-sys linguist-language=linguist-vendored
+/sleigh/** linguist-vendored
+/sleigh-sys/** linguist-vendored
